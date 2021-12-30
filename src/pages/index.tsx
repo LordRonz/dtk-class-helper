@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import type { NextPage } from 'next';
 
+import Footer from '@/components/Footer';
 import ArrowLink from '@/components/links/ArrowLink';
 import ButtonLink from '@/components/links/ButtonLink';
 import CustomLink from '@/components/links/CustomLink';
@@ -38,7 +39,7 @@ const Home: NextPage = () => {
               <img width='92' height='32' src='https://vercel.com/button' alt='Deploy with Vercel' />
             </UnstyledLink>
 
-            <footer className='absolute bottom-2'>© Aaron Christopher {new Date().getFullYear()}</footer>
+            <Footer />
           </div>
         </section>
       </main>

@@ -2,10 +2,12 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 const defaultMeta = {
-  title: 'NextJS Typescript Boilerplate',
-  siteName: process.env.NEXT_PUBLIC_HOSTNAME || 'lordronz.github.io',
-  description: 'NextJS Typescript Boilerplate.',
-  url: process.env.NEXT_PUBLIC_HOSTNAME ? `https://${process.env.NEXT_PUBLIC_HOSTNAME}` : 'https://lordronz.github.io',
+  title: 'DTK Class Helper',
+  siteName: process.env.NEXT_PUBLIC_HOSTNAME || 'dtk-class-helper.vercel.app',
+  description: 'Helper for Computer Engineering ITS Class List',
+  url: process.env.NEXT_PUBLIC_HOSTNAME
+    ? `https://${process.env.NEXT_PUBLIC_HOSTNAME}`
+    : 'https://dtk-class-helper.vercel.app',
   image: '/vercel.svg',
   type: 'website',
   robots: 'follow, index',

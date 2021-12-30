@@ -1,5 +1,5 @@
 {
-  "name": "nextjs-starter",
+  "name": "dtk-class-helper",
   "private": true,
   "scripts": {
     "dev": "next dev",
