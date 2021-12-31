@@ -1,10 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 import type { NextPage } from 'next';
 import { useState } from 'react';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
+import Button from '@/components/buttons/Button';
 import Footer from '@/components/Footer';
 import ArrowLink from '@/components/links/ArrowLink';
 import ButtonLink from '@/components/links/ButtonLink';
+import CustomLink from '@/components/links/CustomLink';
 import Seo from '@/components/Seo';
 import type { DataMatkul } from '@/data/dataMatkul';
 import dataMatkul from '@/data/dataMatkul';
@@ -14,7 +17,9 @@ const Home: NextPage = () => {
   const [matkul, setMatkul] = useState<DataMatkul | undefined>(dataMatkul.find((datum) => datum.kode === 'EC4601'));
   const [kelas, setKelas] = useState<string>('A');
 
-  const filteredData = dataMatkul.filter((datum) => datum.sem === semester);
+  const filterData = () => dataMatkul.filter((datum) => datum.sem === semester);
+
+  const filteredData = filterData();
 
   const handleMatkul = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setMatkul(dataMatkul.find((datum) => datum.kode === e.target.value));
@@ -30,7 +35,12 @@ const Home: NextPage = () => {
             <h2>Langkah-langkah</h2>
             <div className='space-y-4'>
               <h3>1. Login Sistem Informasi Akademik ITS (SIAKAD)</h3>
-              <p>Dibuka sampai keliatan laman siakad seperti ini.</p>
+              <p>
+                Dibuka sampai keliatan laman SIAKAD.{' '}
+                <CustomLink href='/ssanintegra.png' openNewTab={true}>
+                  Contoh tampilan seperti ini
+                </CustomLink>
+              </p>
               <ArrowLink className='text-primary-100' href='https://akademik.its.ac.id/myitsauth.php'>
                 Buka My ITS
               </ArrowLink>
@@ -40,7 +50,6 @@ const Home: NextPage = () => {
               <p>Semester 1 sama 2 ga banyak soalnya paketan.</p>
               <select
                 name='select'
-                id='semester'
                 className='py-2 pl-4 pr-8 border border-primary-500 rounded-lg focus:border-primary-400 focus:ring-primary-400 bg-black'
                 value={semester}
                 onChange={(e) => setSemester(e.target.value)}
@@ -56,7 +65,6 @@ const Home: NextPage = () => {
               <h3>3. Pilih Matkul</h3>
               <select
                 name='select'
-                id='matkul'
                 className='max-w-xs py-2 pl-4 pr-8 border border-primary-500 rounded-lg focus:border-primary-400 focus:ring-primary-400 bg-black'
                 value={matkul?.kode}
                 onChange={handleMatkul}
@@ -72,7 +80,6 @@ const Home: NextPage = () => {
               <h3>4. Kelas</h3>
               <select
                 name='select'
-                id=''
                 className='py-2 pl-4 pr-8 border border-primary-500 rounded-lg focus:border-primary-400 focus:ring-primary-400 bg-black'
                 value={kelas}
                 onChange={(e) => setKelas(e.target.value)}
@@ -112,6 +119,13 @@ const Home: NextPage = () => {
               >
                 Buka Daftar Kelas
               </ButtonLink>
+              <CopyToClipboard
+                text={`https://akademik.its.ac.id/lv_peserta.php?mkJur=${matkul?.mkjur}&mkID=${
+                  matkul?.kode
+                }&mkSem=1&mkThn=2021&mkKelas=${kelas.toUpperCase()}`}
+              >
+                <Button className='ml-4'>Copy</Button>
+              </CopyToClipboard>
             </div>
           </div>
           <Footer />
