@@ -31,8 +31,13 @@ const Home: NextPage = () => {
       <main>
         <section className='bg-black text-primary-50'>
           <div className='min-h-screen py-16 space-y-10 text-primary-50 layout'>
-            <h1 className='text-primary-200'>Daftar kelas Teknik Komputer ITS</h1>
-            <h2>Langkah-langkah</h2>
+            <div className='space-y-4'>
+              <h1 className='text-primary-200'>Daftar kelas Teknik Komputer ITS</h1>
+              <CustomLink href='/ingfo' className='text-primary-300'>
+                Ingfo
+              </CustomLink>
+              <h2>Langkah-langkah</h2>
+            </div>
             <div className='space-y-4'>
               <h3>1. Login Sistem Informasi Akademik ITS (SIAKAD)</h3>
               <p>
@@ -92,7 +97,7 @@ const Home: NextPage = () => {
               </select>
             </div>
             <div className='space-y-4'>
-              <h3>5. Open Link</h3>
+              <h3>5. Buka link daftar kelas</h3>
               <p className='text-gray-300 !mt-2'>
                 https://akademik.its.ac.id/lv_peserta.php
                 <br />
