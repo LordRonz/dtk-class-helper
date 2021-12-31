@@ -1,7 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 import type { NextPage } from 'next';
 import { useState } from 'react';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
+import Button from '@/components/buttons/Button';
 import Footer from '@/components/Footer';
 import ArrowLink from '@/components/links/ArrowLink';
 import ButtonLink from '@/components/links/ButtonLink';
@@ -117,6 +119,13 @@ const Home: NextPage = () => {
               >
                 Buka Daftar Kelas
               </ButtonLink>
+              <CopyToClipboard
+                text={`https://akademik.its.ac.id/lv_peserta.php?mkJur=${matkul?.mkjur}&mkID=${
+                  matkul?.kode
+                }&mkSem=1&mkThn=2021&mkKelas=${kelas.toUpperCase()}`}
+              >
+                <Button className='ml-4'>Copy</Button>
+              </CopyToClipboard>
             </div>
           </div>
           <Footer />
