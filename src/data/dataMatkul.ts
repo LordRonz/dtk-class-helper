@@ -57,8 +57,6 @@ const dataMatkul: DataMatkul[] = [
   { kode: 'EC4944', mkjur: '29100', nama: 'Informatika Medis', sem: '7' },
   { kode: 'EC4945', mkjur: '29100', nama: 'Grafika Komputer', sem: '7' },
   { kode: 'EC4947', mkjur: '29100', nama: 'Interaksi Komputer Manusia', sem: '7' },
-  { kode: 'EC4603', mkjur: '29100', nama: 'Sistem Tertanam dan lab', sem: '6' },
-  { kode: 'EC4602', mkjur: '29100', nama: 'Pemrograman Sistem dan Jaringan', sem: '6' },
   { kode: 'EC4801', mkjur: '29100', nama: 'Tugas Akhir', sem: '8' },
   { kode: 'EC4802', mkjur: '29100', nama: 'Kompetensi Teknologi Elektro', sem: '8' },
   { kode: 'EC4916', mkjur: '29100', nama: 'Wawasan dan Aplikasi Teknologi', sem: '8' },
