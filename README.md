@@ -1,10 +1,10 @@
-![[nextjs-starter]](https://socialify.git.ci/LordRonz/nextjs-starter/image?description=1&font=Source%20Code%20Pro&forks=1&issues=1&language=1&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Dark)
+![[dtk-class-helper]](https://socialify.git.ci/LordRonz/dtk-class-helper/image?description=1&font=Source%20Code%20Pro&forks=1&issues=1&language=1&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Dark)
 
-[![Lint](https://github.com/LordRonz/nextjs-starter/actions/workflows/lint.yml/badge.svg?branch=main)](https://github.com/LordRonz/nextjs-starter/actions/workflows/lint.yml)
-![GitHub branch checks state](https://img.shields.io/github/checks-status/lordronz/nextjs-starter/main)
-![Lines of code](https://img.shields.io/tokei/lines/github/lordronz/nextjs-starter)
-[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/github/LordRonz/nextjs-starter.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/LordRonz/nextjs-starter/context:javascript)
-![vercel status](https://img.shields.io/github/deployments/lordronz/nextjs-starter/production?logo=vercel&label=vercel)
+[![Lint](https://github.com/LordRonz/dtk-class-helper/actions/workflows/lint.yml/badge.svg?branch=main)](https://github.com/LordRonz/dtk-class-helper/actions/workflows/lint.yml)
+![GitHub branch checks state](https://img.shields.io/github/checks-status/LordRonz/dtk-class-helper/main)
+![Lines of code](https://img.shields.io/tokei/lines/github/LordRonz/dtk-class-helper)
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/github/LordRonz/dtk-class-helper.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/LordRonz/dtk-class-helper/context:javascript)
+![vercel status](https://img.shields.io/github/deployments/LordRonz/dtk-class-helper/production?logo=vercel&label=vercel)
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
