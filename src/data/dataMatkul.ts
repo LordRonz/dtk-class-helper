@@ -11,7 +11,7 @@ const dataMatkul: DataMatkul[] = [
   { kode: 'EW4003', mkjur: '29100', nama: 'Rangkaian Listrik', sem: '2' },
   { kode: 'EC4201', mkjur: '29100', nama: 'Pemrograman Lanjut', sem: '2' },
   { kode: 'EC4301', mkjur: '29100', nama: 'Aljabar Linier dan Matematika Diskrit', sem: '3' },
-  { kode: 'EC4302', mkjur: '29100', nama: 'Sistem Telekomunikasi', sem: '4' },
+  { kode: 'EC4302', mkjur: '29100', nama: 'Sistem Telekomunikasi', sem: '3' },
   { kode: 'EC4303', mkjur: '29100', nama: 'Rangkaian elektronika', sem: '3' },
   { kode: 'EC4304', mkjur: '29100', nama: 'Struktur data dan Analisa Algoritma', sem: '3' },
   { kode: 'EC4305', mkjur: '29100', nama: 'Sistem Operasi', sem: '3' },
@@ -59,7 +59,7 @@ const dataMatkul: DataMatkul[] = [
   { kode: 'EC4947', mkjur: '29100', nama: 'Interaksi Komputer Manusia', sem: '7' },
   { kode: 'EC4801', mkjur: '29100', nama: 'Tugas Akhir', sem: '8' },
   { kode: 'EC4802', mkjur: '29100', nama: 'Kompetensi Teknologi Elektro', sem: '8' },
-  { kode: 'EC4916', mkjur: '29100', nama: 'Wawasan dan Aplikasi Teknologi', sem: '8' },
+  { kode: 'UG4916', mkjur: '29100', nama: 'Wawasan dan Aplikasi Teknologi', sem: '8' },
 ];
 
 export default dataMatkul;

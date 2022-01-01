@@ -4,7 +4,7 @@ import 'tippy.js/animations/scale-subtle.css';
 
 import Tippy from '@tippyjs/react';
 import type { NextPage } from 'next';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 import Button from '@/components/buttons/Button';
@@ -16,20 +16,30 @@ import Seo from '@/components/Seo';
 import type { DataMatkul } from '@/data/dataMatkul';
 import dataMatkul from '@/data/dataMatkul';
 
+const filterData = (semester: string) => dataMatkul.filter((datum) => datum.sem === semester);
+
 const Home: NextPage = () => {
   const [semester, setSemester] = useState<string>('6');
-  const [matkul, setMatkul] = useState<DataMatkul | undefined>(dataMatkul.find((datum) => datum.kode === 'EC4601'));
+  const [matkul, setMatkul] = useState<DataMatkul | undefined>();
   const [kelas, setKelas] = useState<string>('A');
 
   const [copyStatus, setCopyStatus] = useState('Click to copy');
 
-  const filterData = () => dataMatkul.filter((datum) => datum.sem === semester);
-
-  const filteredData = filterData();
+  const [filteredData, setFilteredData] = useState<DataMatkul[]>(filterData(semester));
 
   const handleMatkul = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setMatkul(dataMatkul.find((datum) => datum.kode === e.target.value));
   };
+
+  const handleSemester = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSemester(e.target.value);
+  };
+
+  useEffect(() => {
+    const tempFilteredData = filterData(semester);
+    setMatkul(tempFilteredData[0]);
+    setFilteredData(tempFilteredData);
+  }, [semester]);
 
   return (
     <>
@@ -63,7 +73,7 @@ const Home: NextPage = () => {
                 name='select'
                 className='py-2 pl-4 pr-8 border border-primary-500 rounded-lg focus:border-primary-400 focus:ring-primary-400 bg-black'
                 value={semester}
-                onChange={(e) => setSemester(e.target.value)}
+                onChange={handleSemester}
               >
                 {[...new Array(8)].map((_, i) => (
                   <option key={i + 1} value={i + 1}>
