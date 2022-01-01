@@ -29,9 +29,9 @@ const Home: NextPage = () => {
               </ArrowLink>
             </div>
             <div className='flex justify-center items-center'>
-              <CustomLink href='/' className='text-primary-200'>
+              <ArrowLink href='/' className='text-primary-200' direction='left'>
                 Balik ke Home
-              </CustomLink>
+              </ArrowLink>
             </div>
           </div>
           <Footer />
