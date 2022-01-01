@@ -1,4 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
+import 'tippy.js/dist/tippy.css';
+import 'tippy.js/animations/scale-subtle.css';
+
+import Tippy from '@tippyjs/react';
 import type { NextPage } from 'next';
 import { useState } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
@@ -16,6 +20,8 @@ const Home: NextPage = () => {
   const [semester, setSemester] = useState<string>('6');
   const [matkul, setMatkul] = useState<DataMatkul | undefined>(dataMatkul.find((datum) => datum.kode === 'EC4601'));
   const [kelas, setKelas] = useState<string>('A');
+
+  const [copyStatus, setCopyStatus] = useState('Click to copy');
 
   const filterData = () => dataMatkul.filter((datum) => datum.sem === semester);
 
@@ -124,13 +130,31 @@ const Home: NextPage = () => {
               >
                 Buka Daftar Kelas
               </ButtonLink>
-              <CopyToClipboard
-                text={`https://akademik.its.ac.id/lv_peserta.php?mkJur=${matkul?.mkjur}&mkID=${
-                  matkul?.kode
-                }&mkSem=1&mkThn=2021&mkKelas=${kelas.toUpperCase()}`}
-              >
-                <Button className='ml-4'>Copy</Button>
-              </CopyToClipboard>
+              <span className='ml-4'>
+                <Tippy
+                  animation='scale-subtle'
+                  hideOnClick={false}
+                  content={
+                    <span className='inline-flex flex-col items-center p-2 bg-dark rounded-md shadow-md border-thin'>
+                      {copyStatus}
+                    </span>
+                  }
+                >
+                  <span>
+                    <CopyToClipboard
+                      text={`https://akademik.its.ac.id/lv_peserta.php?mkJur=${matkul?.mkjur}&mkID=${
+                        matkul?.kode
+                      }&mkSem=1&mkThn=2021&mkKelas=${kelas.toUpperCase()}`}
+                      onCopy={() => {
+                        setCopyStatus('Copied to clipboard 😳');
+                        setTimeout(() => setCopyStatus('Click to copy'), 1469);
+                      }}
+                    >
+                      <Button>Copy</Button>
+                    </CopyToClipboard>
+                  </span>
+                </Tippy>
+              </span>
             </div>
           </div>
           <Footer />
