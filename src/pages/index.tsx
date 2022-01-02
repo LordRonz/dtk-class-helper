@@ -142,18 +142,18 @@ const Home: NextPage = () => {
                 https://akademik.its.ac.id/lv_peserta.php
                 <br />
                 ?mkJur=
-                <span className='text-primary-400'>{matkul?.mkjur}</span>
+                <span className='text-primary-200'>{matkul?.mkjur}</span>
                 <br />
                 {'&'}
                 mkID=
-                <span className='text-primary-400'>{matkul?.kode}</span>
+                <span className='text-primary-200'>{matkul?.kode}</span>
                 <br />
                 {'&'}
                 mkSem=1{'&'}mkThn=2021
                 <br />
                 {'&'}
                 mkKelas=
-                <span className='text-primary-400'>{kelas.toUpperCase()}</span>
+                <span className='text-primary-200'>{kelas.toUpperCase()}</span>
               </p>
 
               <ButtonLink
