@@ -14,16 +14,16 @@ import ButtonLink from '@/components/links/ButtonLink';
 import CustomLink from '@/components/links/CustomLink';
 import Seo from '@/components/Seo';
 import type { DataMatkul } from '@/data/dataMatkul';
-import dataMatkul from '@/data/dataMatkul';
+import dataMatkul, { cariMatkul } from '@/data/dataMatkul';
 
-const filterData = (semester: string) => dataMatkul.filter((datum) => datum.sem === semester);
+const filterData = (semester: string): DataMatkul[] => dataMatkul.filter((datum) => datum.sem === semester);
 
 const Home: NextPage = () => {
   const [semester, setSemester] = useState<string>('6');
   const [matkul, setMatkul] = useState<DataMatkul | undefined>();
   const [kelas, setKelas] = useState<string>('A');
 
-  const [copyStatus, setCopyStatus] = useState('Click to copy');
+  const [copyStatus, setCopyStatus] = useState<string>('Click to copy');
 
   const [filteredData, setFilteredData] = useState<DataMatkul[]>(filterData(semester));
 
@@ -31,15 +31,26 @@ const Home: NextPage = () => {
     setMatkul(dataMatkul.find((datum) => datum.kode === e.target.value));
   };
 
+  const handleCariMatkul = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target;
+    const [kode] = value.split(' - ');
+    const matkul = dataMatkul.find((datum) => datum.kode === kode);
+    if (!matkul) return;
+    setSemester(matkul.sem);
+    setFilteredData(filterData(matkul.sem));
+    setMatkul(matkul);
+  };
+
   const handleSemester = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSemester(e.target.value);
   };
 
   useEffect(() => {
+    if (matkul?.sem === semester) return;
     const tempFilteredData = filterData(semester);
     setMatkul(tempFilteredData[0]);
     setFilteredData(tempFilteredData);
-  }, [semester]);
+  }, [semester, matkul]);
 
   return (
     <>
@@ -81,6 +92,19 @@ const Home: NextPage = () => {
                   </option>
                 ))}
               </select>
+              <p>Atau</p>
+              <h3>Cari matkul</h3>
+              <input
+                list='carimatkul'
+                className='py-2 pl-4 pr-8 border border-primary-500 rounded-lg focus:border-primary-400 focus:ring-primary-400 bg-black'
+                onChange={handleCariMatkul}
+                placeholder='Ketik disini'
+              />
+              <datalist id='carimatkul'>
+                {cariMatkul.map((matkul) => (
+                  <option value={matkul.nama} key={matkul.kode} />
+                ))}
+              </datalist>
             </div>
             <div className='space-y-4'>
               <h3>3. Pilih Matkul</h3>
