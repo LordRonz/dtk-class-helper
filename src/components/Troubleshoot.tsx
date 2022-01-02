@@ -48,6 +48,13 @@ const Troubleshoot = (): JSX.Element => {
             </p>
             <Image src='/ssanintegra.png' width='1920' height='928' alt='Troubleshoot: harus masuk sampe SIAKAD' />
           </div>
+          <p>
+            Abistu lakuin lagi deh{' '}
+            <CustomLink href='#step5' className='text-primary-100'>
+              Step 5
+            </CustomLink>{' '}
+            nya
+          </p>
         </Disclosure.Panel>
       </Transition>
     </Disclosure>

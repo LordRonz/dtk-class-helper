@@ -60,7 +60,7 @@ const Home: NextPage = () => {
       <Nav />
       <main>
         <section className='bg-black text-primary-50'>
-          <div className='min-h-screen py-16 space-y-10 text-primary-50 layout'>
+          <div className='min-h-screen py-10 space-y-10 text-primary-50 layout'>
             <div className='space-y-8'>
               <h1 className='text-primary-200'>Daftar kelas Teknik Komputer ITS</h1>
               <h2>Langkah-langkah</h2>
@@ -136,7 +136,7 @@ const Home: NextPage = () => {
                 ))}
               </select>
             </div>
-            <div className='space-y-4'>
+            <div className='space-y-4' id='step5'>
               <h3>5. Buka link daftar kelas</h3>
               <p className='text-gray-300 !mt-2'>
                 https://akademik.its.ac.id/lv_peserta.php
