@@ -3,12 +3,14 @@ import type { NextPage } from 'next';
 
 import ArrowLink from '@/components/links/ArrowLink';
 import CustomLink from '@/components/links/CustomLink';
+import Nav from '@/components/Nav';
 import Seo from '@/components/Seo';
 
 const Home: NextPage = () => {
   return (
     <>
       <Seo />
+      <Nav />
       <main>
         <section className='bg-black text-primary-50'>
           <div className='min-h-screen py-16 space-y-10 text-primary-50 layout'>
