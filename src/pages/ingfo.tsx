@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import type { NextPage } from 'next';
 
+import Contact from '@/components/Contact';
 import ArrowLink from '@/components/links/ArrowLink';
 import CustomLink from '@/components/links/CustomLink';
 import Nav from '@/components/Nav';
@@ -36,6 +37,10 @@ const Home: NextPage = () => {
                 <ArrowLink href='/api/matkul' openNewTab={true}>
                   Link API JSON
                 </ArrowLink>
+              </div>
+              <div className='space-y-4'>
+                <h4>Kontak</h4>
+                <Contact />
               </div>
             </div>
             <div className='flex justify-center items-center'>
