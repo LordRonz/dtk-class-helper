@@ -12,7 +12,9 @@ import Footer from '@/components/Footer';
 import ArrowLink from '@/components/links/ArrowLink';
 import ButtonLink from '@/components/links/ButtonLink';
 import CustomLink from '@/components/links/CustomLink';
+import Nav from '@/components/Nav';
 import Seo from '@/components/Seo';
+import Troubleshoot from '@/components/Troubleshoot';
 import type { DataMatkul } from '@/data/dataMatkul';
 import dataMatkul, { cariMatkul } from '@/data/dataMatkul';
 
@@ -55,26 +57,24 @@ const Home: NextPage = () => {
   return (
     <>
       <Seo />
+      <Nav />
       <main>
         <section className='bg-black text-primary-50'>
           <div className='min-h-screen py-16 space-y-10 text-primary-50 layout'>
-            <div className='space-y-4'>
+            <div className='space-y-8'>
               <h1 className='text-primary-200'>Daftar kelas Teknik Komputer ITS</h1>
-              <CustomLink href='/ingfo' className='text-primary-300'>
-                Ingfo
-              </CustomLink>
               <h2>Langkah-langkah</h2>
             </div>
-            <div className='space-y-4'>
+            <div className='space-y-4' id='step1'>
               <h3>1. Login Sistem Informasi Akademik ITS (SIAKAD)</h3>
               <p>
                 Dibuka sampai keliatan laman SIAKAD.{' '}
-                <CustomLink href='/ssanintegra.png' openNewTab={true}>
+                <CustomLink href='/ssanintegra.png' openNewTab={true} className='text-primary-100'>
                   Contoh tampilan seperti ini
                 </CustomLink>
               </p>
               <ArrowLink className='text-primary-100' href='https://akademik.its.ac.id/myitsauth.php'>
-                Buka My ITS
+                Buka SIAKAD
               </ArrowLink>
             </div>
             <div className='space-y-4'>
@@ -189,6 +189,9 @@ const Home: NextPage = () => {
                   </span>
                 </Tippy>
               </span>
+            </div>
+            <div>
+              <Troubleshoot />
             </div>
           </div>
           <Footer />
