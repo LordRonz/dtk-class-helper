@@ -5,6 +5,11 @@ export type DataMatkul = {
   mkjur: string;
 };
 
+export type CariMatkul = {
+  kode: string;
+  nama: string;
+};
+
 const dataMatkul: DataMatkul[] = [
   { kode: 'EW4001', mkjur: '29100', nama: 'Pengantar Teknologi Elektro', sem: '1' },
   { kode: 'EW4002', mkjur: '29100', nama: 'Dasar Pemrograman', sem: '1' },
@@ -61,5 +66,12 @@ const dataMatkul: DataMatkul[] = [
   { kode: 'EC4802', mkjur: '29100', nama: 'Kompetensi Teknologi Elektro', sem: '8' },
   { kode: 'UG4916', mkjur: '29100', nama: 'Wawasan dan Aplikasi Teknologi', sem: '8' },
 ];
+
+export const cariMatkul: CariMatkul[] = dataMatkul.map((datum) => {
+  return {
+    kode: datum.kode,
+    nama: `${datum.kode} - ${datum.nama}`,
+  };
+});
 
 export default dataMatkul;
