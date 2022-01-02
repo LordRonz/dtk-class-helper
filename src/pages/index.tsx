@@ -136,7 +136,7 @@ const Home: NextPage = () => {
                 ))}
               </select>
             </div>
-            <div className='space-y-4'>
+            <div className='space-y-4' id='step5'>
               <h3>5. Buka link daftar kelas</h3>
               <p className='text-gray-300 !mt-2'>
                 https://akademik.its.ac.id/lv_peserta.php
