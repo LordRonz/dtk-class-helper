@@ -16,7 +16,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Data>)
     method,
   } = req;
 
-  const s = search.toString();
+  const s = search?.toString();
 
   switch (method) {
     case 'GET': {

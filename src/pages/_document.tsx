@@ -15,6 +15,7 @@ class MyDocument extends Document {
             defer
             data-website-id='64c14ec3-3396-43c3-a559-27231cde7b7a'
             src='https://umami-xi-eight.vercel.app/umami.js'
+            data-domains='dtk-class-helper.vercel.app'
           />
         </Head>
         <body>
