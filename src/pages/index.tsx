@@ -52,6 +52,8 @@ const Home: NextPage = () => {
     setMatkul(temp[0]);
   };
 
+  const komi = Math.random() < 0.5;
+
   return (
     <>
       <Seo />
@@ -67,7 +69,11 @@ const Home: NextPage = () => {
               <h3>1. Login Sistem Informasi Akademik ITS (SIAKAD)</h3>
               <p>
                 Dibuka sampai keliatan laman SIAKAD.{' '}
-                <CustomLink href='/ssanintegra.png' openNewTab={true} className='text-primary-100'>
+                <CustomLink
+                  href={komi ? '/ssanintegra1.png' : '/ssanintegra.png'}
+                  openNewTab={true}
+                  className='text-primary-100'
+                >
                   Contoh tampilan seperti ini
                 </CustomLink>
               </p>

@@ -7,6 +7,8 @@ import ArrowLink from './links/ArrowLink';
 import CustomLink from './links/CustomLink';
 
 const Troubleshoot = (): JSX.Element => {
+  const komi = Math.random() < 0.5;
+
   return (
     <Disclosure as='div'>
       <Disclosure.Button className='inline-flex items-center gap-2 text-lg font-bold text-gray-300 md:text-2xl hover:text-primary-200 focus-visible:text-primary-400'>
@@ -41,12 +43,21 @@ const Troubleshoot = (): JSX.Element => {
                 Step 1
               </CustomLink>{' '}
               udah masuk sampe SIAKAD nya, bukan sampe{' '}
-              <CustomLink href='/dashboardmyits.png' className='text-primary-100' openNewTab={true}>
+              <CustomLink
+                href={komi ? '/dashboardmyits1.png' : '/dashboardmyits.png'}
+                className='text-primary-100'
+                openNewTab={true}
+              >
                 dashboard
               </CustomLink>{' '}
               doang
             </p>
-            <Image src='/ssanintegra.png' width='1920' height='928' alt='Troubleshoot: harus masuk sampe SIAKAD' />
+            <Image
+              src={komi ? '/ssanintegra1.png' : '/ssanintegra.png'}
+              width='1920'
+              height='928'
+              alt='Troubleshoot: harus masuk sampe SIAKAD'
+            />
           </div>
           <p>
             Abistu lakuin lagi deh{' '}
