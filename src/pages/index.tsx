@@ -4,7 +4,7 @@ import 'tippy.js/animations/scale-subtle.css';
 
 import Tippy from '@tippyjs/react';
 import type { NextPage } from 'next';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 import Button from '@/components/buttons/Button';
@@ -20,9 +20,11 @@ import dataMatkul, { cariMatkul } from '@/data/dataMatkul';
 
 const filterData = (semester: string): DataMatkul[] => dataMatkul.filter((datum) => datum.sem === semester);
 
+const s = '6';
+
 const Home: NextPage = () => {
-  const [semester, setSemester] = useState<string>('6');
-  const [matkul, setMatkul] = useState<DataMatkul | undefined>();
+  const [semester, setSemester] = useState<string>(s);
+  const [matkul, setMatkul] = useState<DataMatkul | undefined>(dataMatkul.find((datum) => datum.kode === `EC4${s}01`));
   const [kelas, setKelas] = useState<string>('A');
 
   const [copyStatus, setCopyStatus] = useState<string>('Click to copy');
@@ -45,14 +47,10 @@ const Home: NextPage = () => {
 
   const handleSemester = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSemester(e.target.value);
+    const temp = filterData(e.target.value);
+    setFilteredData(temp);
+    setMatkul(temp[0]);
   };
-
-  useEffect(() => {
-    if (matkul?.sem === semester) return;
-    const tempFilteredData = filterData(semester);
-    setMatkul(tempFilteredData[0]);
-    setFilteredData(tempFilteredData);
-  }, [semester, matkul]);
 
   return (
     <>
