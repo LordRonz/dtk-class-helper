@@ -142,6 +142,12 @@ const Home: NextPage = () => {
             </div>
             <div className='space-y-4' id='step5'>
               <h3>5. Buka link daftar kelas</h3>
+              <p>
+                Kira-kira gini{' '}
+                <CustomLink href='/example.png' openNewTab={true} className='text-primary-100'>
+                  hasilnya
+                </CustomLink>
+              </p>
               <p className='text-gray-300 !mt-2'>
                 https://akademik.its.ac.id/lv_peserta.php
                 <br />
