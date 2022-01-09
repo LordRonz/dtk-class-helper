@@ -46,7 +46,7 @@ const Troubleshoot = (): JSX.Element => {
               <CustomLink
                 href={komi ? '/dashboardmyits1.png' : '/dashboardmyits.png'}
                 className='text-primary-100'
-                openNewTab={true}
+                openNewTab
               >
                 dashboard
               </CustomLink>{' '}

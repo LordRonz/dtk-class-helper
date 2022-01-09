@@ -10,7 +10,7 @@ import Seo from '@/components/Seo';
 const Home: NextPage = () => {
   return (
     <>
-      <Seo />
+      <Seo templateTitle='ingfo' />
       <Nav />
       <main>
         <section className='bg-black text-primary-50'>
@@ -34,7 +34,7 @@ const Home: NextPage = () => {
               </div>
               <div className='space-y-4'>
                 <h4>Data matkul</h4>
-                <ArrowLink href='/api/matkul' openNewTab={true}>
+                <ArrowLink href='/api/matkul' openNewTab>
                   Link API JSON
                 </ArrowLink>
               </div>
