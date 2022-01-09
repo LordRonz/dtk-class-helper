@@ -69,11 +69,7 @@ const Home: NextPage = () => {
               <h3>1. Login Sistem Informasi Akademik ITS (SIAKAD)</h3>
               <p>
                 Dibuka sampai keliatan laman SIAKAD.{' '}
-                <CustomLink
-                  href={komi ? '/ssanintegra1.png' : '/ssanintegra.png'}
-                  openNewTab={true}
-                  className='text-primary-100'
-                >
+                <CustomLink href={komi ? '/ssanintegra1.png' : '/ssanintegra.png'} openNewTab className='text-primary-100'>
                   Contoh tampilan seperti ini
                 </CustomLink>
               </p>
@@ -144,7 +140,7 @@ const Home: NextPage = () => {
               <h3>5. Buka link daftar kelas</h3>
               <p>
                 Kira-kira gini{' '}
-                <CustomLink href='/example.png' openNewTab={true} className='text-primary-100'>
+                <CustomLink href='/example.png' openNewTab className='text-primary-100'>
                   hasilnya
                 </CustomLink>
               </p>

@@ -4,6 +4,7 @@ import { SiGithub } from 'react-icons/si';
 import UnstyledLink from '@/components/links/UnstyledLink';
 
 const links = [
+  { href: '/apidocs', label: 'API' },
   { href: '/ingfo', label: 'Ingfo' },
   { href: '/credits', label: 'Credits' },
 ];
