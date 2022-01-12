@@ -2,6 +2,7 @@
 import type { NextPage } from 'next';
 
 import Contact from '@/components/Contact';
+import Comment from '@/components/content/Comment';
 import ArrowLink from '@/components/links/ArrowLink';
 import CustomLink from '@/components/links/CustomLink';
 import Nav from '@/components/Nav';
@@ -10,7 +11,7 @@ import Seo from '@/components/Seo';
 const Home: NextPage = () => {
   return (
     <>
-      <Seo templateTitle='ingfo' />
+      <Seo templateTitle='Ingfo' />
       <Nav />
       <main>
         <section className='bg-black text-primary-50'>
@@ -25,6 +26,10 @@ const Home: NextPage = () => {
                 </p>
                 <p>Kalau ada bug atau saran fitur bisa bikin issue atau kalo bisa PR ke repo berikut:</p>
                 <ArrowLink href='https://github.com/lordronz/dtk-class-helper'>Source code</ArrowLink>
+                <p>
+                  Bisa jg lewat <CustomLink href='#comment-section'>comment section</CustomLink> yg ada disini atau di{' '}
+                  <CustomLink href='/#comment-section'>Home</CustomLink>
+                </p>
                 <p>Atau pm aja sih ya, buat yg kenal</p>
                 <p>
                   Karena yang buat ini juga manusia, bisa aja salah, mungkin salah typo/bug lain. Kalo saran fitur jg sangat
@@ -47,6 +52,9 @@ const Home: NextPage = () => {
               <ArrowLink href='/' className='text-primary-200' direction='left'>
                 Balik ke Home
               </ArrowLink>
+            </div>
+            <div id='comment-section'>
+              <Comment />
             </div>
           </div>
         </section>

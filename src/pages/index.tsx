@@ -200,7 +200,7 @@ const Home: NextPage = () => {
             <div>
               <Troubleshoot />
             </div>
-            <div>
+            <div id='comment-section'>
               <Comment />
             </div>
           </div>
