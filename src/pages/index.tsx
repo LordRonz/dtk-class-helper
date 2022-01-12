@@ -8,6 +8,7 @@ import { useState } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 import Button from '@/components/buttons/Button';
+import Comment from '@/components/content/Comment';
 import Footer from '@/components/Footer';
 import ArrowLink from '@/components/links/ArrowLink';
 import ButtonLink from '@/components/links/ButtonLink';
@@ -198,6 +199,9 @@ const Home: NextPage = () => {
             </div>
             <div>
               <Troubleshoot />
+            </div>
+            <div>
+              <Comment />
             </div>
           </div>
           <Footer />
