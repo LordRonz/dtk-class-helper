@@ -10,10 +10,12 @@ const [hjid, hjsv] = [2768716, 6];
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   useEffect(() => {
-    hotjar.initialize(hjid, hjsv);
+    if (!window.location.host.startsWith('localhost')) {
+      hotjar.initialize(hjid, hjsv);
+    }
 
     // Don't increment views if not on main domain
-    if (window.location.host !== 'dtk-class-helper.vercel.app') {
+    if (window.location.host !== 'dtk-class.vercel.app') {
       localStorage.setItem('incrementMetaFlag', 'false');
     }
   }, []);
