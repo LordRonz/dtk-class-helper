@@ -8,7 +8,7 @@ import CustomLink from '@/components/links/CustomLink';
 import Nav from '@/components/Nav';
 import Seo from '@/components/Seo';
 
-const Home: NextPage = () => {
+const Ingfo: NextPage = () => {
   return (
     <>
       <Seo templateTitle='Ingfo' />
@@ -63,4 +63,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default Ingfo;
