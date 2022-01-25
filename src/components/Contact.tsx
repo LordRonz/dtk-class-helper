@@ -31,7 +31,7 @@ const socials = [
 ] as const;
 
 const Contact = (): JSX.Element => {
-  const [copyStatus, setCopyStatus] = useState('Click to copy');
+  const [copyStatus, setCopyStatus] = useState<string>('Click to copy');
 
   return (
     <div className='flex flex-row flex-1 items-center gap-x-10' id='contact'>
