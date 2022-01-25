@@ -6,7 +6,8 @@
 [![repo size](https://img.shields.io/github/repo-size/LordRonz/dtk-class-helper)](https://github.com/LordRonz/dtk-class-helper)
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/github/LordRonz/dtk-class-helper.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/LordRonz/dtk-class-helper/context:javascript)
 ![vercel status](https://img.shields.io/github/deployments/LordRonz/dtk-class-helper/production?logo=vercel&label=vercel)
-![Licens](https://img.shields.io/github/license/lordronz/dtk-class-helper)
+![License](https://img.shields.io/github/license/lordronz/dtk-class-helper)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
