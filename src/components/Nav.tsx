@@ -26,6 +26,7 @@ const Nav = (): JSX.Element => {
                 href='https://github.com/lordronz/dtk-class-helper'
                 target='_blank'
                 rel='noopener noreferrer'
+                aria-label='GitHub Repo'
               >
                 <SiGithub />
               </UnstyledLink>
