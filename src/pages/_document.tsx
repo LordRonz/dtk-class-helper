@@ -10,13 +10,15 @@ class MyDocument extends Document {
     return (
       <Html lang='en'>
         <Head>
-          <script
-            async
-            defer
-            data-website-id='64c14ec3-3396-43c3-a559-27231cde7b7a'
-            src='https://umami-xi-eight.vercel.app/umami.js'
-            data-domains='dtk-class-helper.vercel.app'
-          />
+          {!process.env.CI && (
+            <script
+              async
+              defer
+              data-website-id='64c14ec3-3396-43c3-a559-27231cde7b7a'
+              src='https://umami-xi-eight.vercel.app/umami.js'
+              data-domains='dtk-class.vercel.app'
+            />
+          )}
         </Head>
         <body>
           <Main />
