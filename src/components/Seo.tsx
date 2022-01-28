@@ -3,11 +3,9 @@ import { useRouter } from 'next/router';
 
 const defaultMeta = {
   title: 'DTK Class Helper',
-  siteName: process.env.NEXT_PUBLIC_HOSTNAME || 'dtk-class-helper.vercel.app',
+  siteName: process.env.NEXT_PUBLIC_HOSTNAME || 'dtk-class.vercel.app',
   description: 'Helper for Computer Engineering ITS Class List',
-  url: process.env.NEXT_PUBLIC_HOSTNAME
-    ? `https://${process.env.NEXT_PUBLIC_HOSTNAME}`
-    : 'https://dtk-class-helper.vercel.app',
+  url: process.env.NEXT_PUBLIC_HOSTNAME ? `https://${process.env.NEXT_PUBLIC_HOSTNAME}` : 'https://dtk-class.vercel.app',
   image: '/komi.png',
   type: 'website',
   robots: 'follow, index',
