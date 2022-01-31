@@ -156,7 +156,7 @@ const Home: NextPage = () => {
                 <span className='text-primary-200'>{matkul?.kode}</span>
                 <br />
                 {'&'}
-                mkSem=1{'&'}mkThn=2021
+                mkSem=2{'&'}mkThn=2021
                 <br />
                 {'&'}
                 mkKelas=
