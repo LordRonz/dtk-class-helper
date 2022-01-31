@@ -129,8 +129,9 @@ const Home: NextPage = () => {
               <input
                 list='kelas'
                 className='py-2 pl-4 pr-8 border border-primary-500 rounded-lg focus:border-primary-400 focus:ring-primary-400 bg-black'
-                onChange={(e) => setKelas(e.target.value)}
+                onChange={(e) => setKelas(e.target.value || 'A')}
                 placeholder='Ketik disini'
+                defaultValue='A'
               />
               <datalist id='kelas'>
                 {classes.map((item) => (
