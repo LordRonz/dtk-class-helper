@@ -49,7 +49,7 @@ const dataMatkul: DataMatkul[] = [
   { kode: 'EC4932', mkjur: '29100', nama: 'Komputasi Terdistribusi', sem: '6' },
   { kode: 'EC4933', mkjur: '29100', nama: 'Sistem Komputasi Grid dan Cloud', sem: '6' },
   { kode: 'EC4946', mkjur: '29100', nama: 'Soft Computing dan Deep Learning', sem: '6' },
-  { kode: 'UG4915', mkjur: '29100', nama: 'Teknopreneur', sem: '6' },
+  { kode: 'UG4915', mkjur: '__TPB', nama: 'Teknopreneur', sem: '6' },
   { kode: 'UG4917', mkjur: '29100', nama: 'Kuliah Kerja Nyata Tematik', sem: '6' },
   { kode: 'EC4704', mkjur: '29100', nama: 'Sekuriti Sistem Komputer', sem: '7' },
   { kode: 'EC4703', mkjur: '29100', nama: 'Jaringan Sensor Nirkabel dan Internet of Things', sem: '7' },

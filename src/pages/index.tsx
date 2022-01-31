@@ -171,7 +171,7 @@ const Home: NextPage = () => {
                 variant='outline'
                 href={`https://akademik.its.ac.id/lv_peserta.php?mkJur=${matkul?.mkjur}&mkID=${
                   matkul?.kode
-                }&mkSem=1&mkThn=2021&mkKelas=${kelas.toUpperCase()}`}
+                }&mkSem=2&mkThn=2021&mkKelas=${kelas.toUpperCase()}`}
               >
                 Buka Daftar Kelas
               </ButtonLink>
@@ -189,7 +189,7 @@ const Home: NextPage = () => {
                     <CopyToClipboard
                       text={`https://akademik.its.ac.id/lv_peserta.php?mkJur=${matkul?.mkjur}&mkID=${
                         matkul?.kode
-                      }&mkSem=1&mkThn=2021&mkKelas=${kelas.toUpperCase()}`}
+                      }&mkSem=2&mkThn=2021&mkKelas=${kelas.toUpperCase()}`}
                       onCopy={() => {
                         setCopyStatus('Copied to clipboard 😳');
                         setTimeout(() => setCopyStatus('Click to copy'), 1469);
