@@ -23,6 +23,8 @@ const filterData = (semester: string): DataMatkul[] => dataMatkul.filter((datum)
 
 const s = '6';
 
+const classes = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(''), ...[...new Array(100)].map((_, i) => (i + 1).toString())];
+
 const Home: NextPage = () => {
   const [semester, setSemester] = useState<string>(s);
   const [matkul, setMatkul] = useState<DataMatkul | undefined>(dataMatkul.find((datum) => datum.kode === `EC4${s}01`));
@@ -124,18 +126,19 @@ const Home: NextPage = () => {
             </div>
             <div className='space-y-4'>
               <h3>4. Kelas</h3>
-              <select
-                name='select'
+              <input
+                list='kelas'
                 className='py-2 pl-4 pr-8 border border-primary-500 rounded-lg focus:border-primary-400 focus:ring-primary-400 bg-black'
-                value={kelas}
                 onChange={(e) => setKelas(e.target.value)}
-              >
-                {'ABCDEFG'.split('').map((item) => (
+                placeholder='Ketik disini'
+              />
+              <datalist id='kelas'>
+                {classes.map((item) => (
                   <option key={item} value={item}>
                     {item}
                   </option>
                 ))}
-              </select>
+              </datalist>
             </div>
             <div className='space-y-4' id='step5'>
               <h3>5. Buka link daftar kelas</h3>
