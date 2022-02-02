@@ -57,6 +57,7 @@ const dataMatkul: DataMatkul[] = [
   { kode: 'EC4702', mkjur: '29100', nama: 'Proyek Telematika', sem: '7' },
   { kode: 'EC4924', mkjur: '29100', nama: 'Probabilistic Robotic', sem: '7' },
   { kode: 'EC4934', mkjur: '29100', nama: 'Web Intelligence dan Big Data', sem: '7' },
+  { kode: 'EC4935', mkjur: '29100', nama: 'Topik Khusus Teknik Komputer', sem: '7' },
   { kode: 'EC4942', mkjur: '29100', nama: 'Komputasi Ubiquitous', sem: '7' },
   { kode: 'EC4943', mkjur: '29100', nama: 'Forensik Digital', sem: '7' },
   { kode: 'EC4944', mkjur: '29100', nama: 'Informatika Medis', sem: '7' },
