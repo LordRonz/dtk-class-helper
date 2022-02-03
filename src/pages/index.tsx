@@ -4,8 +4,10 @@ import 'tippy.js/animations/scale-subtle.css';
 
 import Tippy from '@tippyjs/react';
 import type { NextPage } from 'next';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import type { ThemeConfig } from 'react-select';
+import Select from 'react-select';
 
 import Button from '@/components/buttons/Button';
 import Comment from '@/components/content/Comment';
@@ -21,26 +23,58 @@ import dataMatkul, { cariMatkul } from '@/data/dataMatkul';
 
 const filterData = (semester: string): DataMatkul[] => dataMatkul.filter((datum) => datum.sem === semester);
 
+const cariMatkulOptions = cariMatkul.map((item) => ({
+  label: item.nama,
+  value: item.kode,
+}));
+
 const s = '6';
 
 const classes = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(''), ...[...new Array(100)].map((_, i) => (i + 1).toString())];
+const classesOptions = classes.map((item) => ({
+  label: item,
+  value: item,
+}));
+
+const selectTheme: ThemeConfig = (theme) => ({
+  ...theme,
+  colors: {
+    ...theme.colors,
+    primary: '#eb2754',
+    primary25: '#ff3377',
+    primary50: '#fa8072',
+    primary75: '#ff3377',
+    neutral0: '#000',
+    neutral5: '#111',
+    neutral10: '#222',
+    neutral20: '#992323',
+    neutral30: '#443',
+    neutral40: '#555',
+    neutral50: '#666',
+    neutral60: '#888',
+    neutral70: '#aaa',
+    neutral80: '#ffd1d1',
+    neutral90: '#eee',
+  },
+});
 
 const Home: NextPage = () => {
   const [semester, setSemester] = useState<string>(s);
-  const [matkul, setMatkul] = useState<DataMatkul | undefined>(dataMatkul.find((datum) => datum.kode === `EC4${s}01`));
+  const [matkul, setMatkul] = useState<DataMatkul>(dataMatkul.find((datum) => datum.kode === `EC4${s}01`) ?? dataMatkul[0]);
   const [kelas, setKelas] = useState<string>('A');
 
   const [copyStatus, setCopyStatus] = useState<string>('Click to copy');
 
   const [filteredData, setFilteredData] = useState<DataMatkul[]>(filterData(semester));
 
-  const handleMatkul = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setMatkul(dataMatkul.find((datum) => datum.kode === e.target.value));
+  const handleMatkul = (newValue: { label: string; value: string } | null) => {
+    setMatkul(dataMatkul.find((datum) => datum.kode === newValue?.value) as DataMatkul);
   };
 
-  const handleCariMatkul = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { value } = e.target;
-    const [kode] = value.split(' - ');
+  const handleCariMatkul = (newValue: { label: string; value: string } | null) => {
+    if (!newValue) return;
+    const { value } = newValue;
+    const kode = value;
     const matkul = dataMatkul.find((datum) => datum.kode === kode);
     if (!matkul) return;
     setSemester(matkul.sem);
@@ -56,6 +90,15 @@ const Home: NextPage = () => {
   };
 
   const komi = Math.random() < 0.5;
+
+  const matkulOptions = useMemo(
+    () =>
+      filteredData.map((item) => ({
+        label: item.nama,
+        value: item.kode,
+      })),
+    [filteredData]
+  );
 
   return (
     <>
@@ -97,49 +140,35 @@ const Home: NextPage = () => {
               </select>
               <p>Atau</p>
               <h3>Cari matkul</h3>
-              <input
-                list='carimatkul'
-                className='py-2 pl-4 pr-8 border border-primary-500 rounded-lg focus:border-primary-400 focus:ring-primary-400 bg-black'
+              <Select
+                key={`select-${semester}-${matkul.kode}`}
                 onChange={handleCariMatkul}
-                placeholder='Ketik disini'
+                defaultValue={cariMatkulOptions.find((mk) => mk.value === matkul?.kode) ?? cariMatkulOptions[0]}
+                theme={selectTheme}
+                className='max-w-md'
+                options={cariMatkulOptions}
               />
-              <datalist id='carimatkul'>
-                {cariMatkul.map((matkul) => (
-                  <option value={matkul.nama} key={matkul.kode} />
-                ))}
-              </datalist>
             </div>
             <div className='space-y-4'>
               <h3>3. Pilih Matkul</h3>
-              <select
-                name='select'
-                className='max-w-xs py-2 pl-4 pr-8 border border-primary-500 rounded-lg focus:border-primary-400 focus:ring-primary-400 bg-black'
-                value={matkul?.kode}
+              <Select
+                key={`select-${semester}-${matkul.kode}`}
                 onChange={handleMatkul}
-              >
-                {filteredData.map((item) => (
-                  <option key={item.kode} value={item.kode}>
-                    {item.nama}
-                  </option>
-                ))}
-              </select>
+                defaultValue={{ label: matkul?.nama as string, value: matkul?.kode as string }}
+                theme={selectTheme}
+                className='max-w-md'
+                options={matkulOptions}
+              />
             </div>
             <div className='space-y-4'>
               <h3>4. Kelas</h3>
-              <input
-                list='kelas'
-                className='py-2 pl-4 pr-8 border border-primary-500 rounded-lg focus:border-primary-400 focus:ring-primary-400 bg-black'
-                onChange={(e) => setKelas(e.target.value || 'A')}
-                placeholder='Ketik disini'
-                defaultValue='A'
+              <Select
+                onChange={(newValue) => setKelas(newValue?.value || 'A')}
+                defaultValue={classesOptions[0]}
+                theme={selectTheme}
+                className='max-w-xs'
+                options={classesOptions}
               />
-              <datalist id='kelas'>
-                {classes.map((item) => (
-                  <option key={item} value={item}>
-                    {item}
-                  </option>
-                ))}
-              </datalist>
             </div>
             <div className='space-y-4' id='step5'>
               <h3>5. Buka link daftar kelas</h3>
