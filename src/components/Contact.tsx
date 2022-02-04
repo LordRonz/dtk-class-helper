@@ -15,17 +15,17 @@ const mail = 'christopher.19072@mhs.its.ac.id';
 const socials = [
   {
     label: 'GitHub',
-    link: 'https://github.com/LordRonz',
+    link: 'https://lr-link.vercel.app/github',
     icon: <SiGithub className='text-primary-50 transition-all duration-300 hover:text-primary-300' />,
   },
   {
     label: 'GitLab',
-    link: 'https://gitlab.com/lordronz',
+    link: 'https://lr-link.vercel.app/gitlab',
     icon: <SiGitlab className='text-primary-50 transition-all duration-300 hover:text-primary-300' />,
   },
   {
     label: 'LinkedIn',
-    link: 'https://www.linkedin.com/in/aaronchristopher69/',
+    link: 'https://lr-link.vercel.app/linkedin',
     icon: <SiLinkedin className='text-primary-50 transition-all duration-300 hover:text-primary-300' />,
   },
 ] as const;
