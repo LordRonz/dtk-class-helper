@@ -30,7 +30,12 @@ const cariMatkulOptions = cariMatkul.map((item) => ({
 
 const s = '6';
 
-const classes = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(''), ...[...new Array(100)].map((_, i) => (i + 1).toString())];
+const classes = [
+  ...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(''),
+  ...[...new Array(100)].map((_, i) => (i + 1).toString()),
+  'M00',
+  'MPB',
+];
 const classesOptions = classes.map((item) => ({
   label: item,
   value: item,
