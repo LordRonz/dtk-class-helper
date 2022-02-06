@@ -4,7 +4,8 @@ import 'tippy.js/animations/scale-subtle.css';
 
 import Tippy from '@tippyjs/react';
 import type { NextPage } from 'next';
-import { useMemo, useState } from 'react';
+import { useRouter } from 'next/router';
+import { useEffect, useMemo, useState } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import type { ThemeConfig } from 'react-select';
 import Select from 'react-select';
@@ -64,6 +65,7 @@ const selectTheme: ThemeConfig = (theme) => ({
 });
 
 const Home: NextPage = () => {
+  const router = useRouter();
   const [semester, setSemester] = useState<string>(s);
   const [matkul, setMatkul] = useState<DataMatkul>(dataMatkul.find((datum) => datum.kode === `EC4${s}01`) ?? dataMatkul[0]);
   const [kelas, setKelas] = useState<string>('A');
@@ -104,6 +106,27 @@ const Home: NextPage = () => {
       })),
     [filteredData]
   );
+
+  useEffect(() => {
+    if (!router.isReady) return;
+    const { kelas, kode, semester } = router.query;
+    console.log(kelas, kode, semester);
+    if (kelas) {
+      setKelas(kelas as string);
+    }
+    if (semester && !kode) {
+      setSemester(semester as string);
+      const temp = filterData(semester as string);
+      setFilteredData(temp);
+      setMatkul(temp[0]);
+    }
+    if (kode) {
+      const k = dataMatkul.find((datum) => datum.kode === (kode as string)) ?? dataMatkul[0];
+      setMatkul(k);
+      setSemester(k.sem);
+      setFilteredData(filterData(k.sem));
+    }
+  }, [router.isReady, router.query]);
 
   return (
     <>
@@ -168,8 +191,9 @@ const Home: NextPage = () => {
             <div className='space-y-4'>
               <h3>4. Kelas</h3>
               <Select
+                key={`select-${kelas}`}
                 onChange={(newValue) => setKelas(newValue?.value || 'A')}
-                defaultValue={classesOptions[0]}
+                defaultValue={classesOptions.find(({ value }) => value === kelas) ?? classesOptions[0]}
                 theme={selectTheme}
                 className='max-w-xs'
                 options={classesOptions}
