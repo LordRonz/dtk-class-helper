@@ -110,7 +110,6 @@ const Home: NextPage = () => {
   useEffect(() => {
     if (!router.isReady) return;
     const { kelas, kode, semester } = router.query;
-    console.log(kelas, kode, semester);
     if (kelas) {
       setKelas(kelas as string);
     }
