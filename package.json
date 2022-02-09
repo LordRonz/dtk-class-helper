@@ -18,7 +18,7 @@
     "cy:headless": "cypress run"
   },
   "dependencies": {
-    "@giscus/react": "^1.1.1",
+    "@giscus/react": "^1.1.2",
     "@headlessui/react": "^1.4.3",
     "@tippyjs/react": "^4.2.6",
     "@types/react-copy-to-clipboard": "^5.0.2",
