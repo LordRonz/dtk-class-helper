@@ -64,6 +64,8 @@ const selectTheme: ThemeConfig = (theme) => ({
   },
 });
 
+const [mkSemester, mkTahun] = ['2', '2021'];
+
 const Home: NextPage = () => {
   const router = useRouter();
   const [semester, setSemester] = useState<string>(s);
@@ -106,6 +108,14 @@ const Home: NextPage = () => {
       })),
     [filteredData]
   );
+
+  const [mkSem, mkThn] = useMemo(() => {
+    if (!router.isReady) return [mkSemester, mkTahun];
+    let { mkSem, mkThn } = router.query;
+    mkSem = mkSem ?? mkSemester;
+    mkThn = mkThn ?? mkTahun;
+    return [mkSem as string, mkThn as string];
+  }, [router.isReady, router.query]);
 
   useEffect(() => {
     if (!router.isReady) return;
@@ -217,7 +227,8 @@ const Home: NextPage = () => {
                 <span className='text-primary-200'>{matkul?.kode}</span>
                 <br />
                 {'&'}
-                mkSem=2{'&'}mkThn=2021
+                mkSem={mkSem}
+                {'&'}mkThn={mkThn}
                 <br />
                 {'&'}
                 mkKelas=
@@ -228,7 +239,7 @@ const Home: NextPage = () => {
                 variant='outline'
                 href={`https://akademik.its.ac.id/lv_peserta.php?mkJur=${matkul?.mkjur}&mkID=${
                   matkul?.kode
-                }&mkSem=2&mkThn=2021&mkKelas=${kelas.toUpperCase()}`}
+                }&mkSem=${mkSem}&mkThn=${mkThn}&mkKelas=${kelas.toUpperCase()}`}
               >
                 Buka Daftar Kelas
               </ButtonLink>
@@ -246,7 +257,7 @@ const Home: NextPage = () => {
                     <CopyToClipboard
                       text={`https://akademik.its.ac.id/lv_peserta.php?mkJur=${matkul?.mkjur}&mkID=${
                         matkul?.kode
-                      }&mkSem=2&mkThn=2021&mkKelas=${kelas.toUpperCase()}`}
+                      }&mkSem=${mkSem}&mkThn=${mkThn}&mkKelas=${kelas.toUpperCase()}`}
                       onCopy={() => {
                         setCopyStatus('Copied to clipboard 😳');
                         setTimeout(() => setCopyStatus('Click to copy'), 1469);
