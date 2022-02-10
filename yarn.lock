@@ -2814,10 +2814,10 @@ react-dom@17.0.2:
     object-assign "^4.1.1"
     scheduler "^0.20.2"
 
-react-hotjar@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/react-hotjar/-/react-hotjar-4.0.0.tgz#b98b6baf7da19cd63565a81dee40d0d62702bacd"
-  integrity sha512-jRk2aWZkK2MMWRj+DBhpwTG5jfhae5DMLoVGbRGqPjZDmKYTtV/tD1/0kmFIlw4pInHKaukQriJ14CQg8MGvww==
+react-hotjar@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/react-hotjar/-/react-hotjar-5.0.0.tgz#72beaa2e0067b407c4183dc3ace5020f68959cab"
+  integrity sha512-nEKDm+O5a77C9DlheuA9tz5rwhRjeIFPLhdvynGFxEYTT1qrYC3NU12Z9/tgvN2l9Tzyn7erUQ0C8fZHZBceTw==
 
 react-icons@^4.3.1:
   version "4.3.1"

@@ -30,7 +30,7 @@
     "react": "17.0.2",
     "react-copy-to-clipboard": "^5.0.4",
     "react-dom": "17.0.2",
-    "react-hotjar": "^4.0.0",
+    "react-hotjar": "^5.0.0",
     "react-icons": "^4.3.1",
     "react-select": "^5.2.2",
     "safe-regex": "^2.1.1",
