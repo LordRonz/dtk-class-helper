@@ -5,6 +5,7 @@ import 'tippy.js/animations/scale-subtle.css';
 import Tippy from '@tippyjs/react';
 import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
+import { stringifyUrl } from 'query-string';
 import { useEffect, useMemo, useState } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import type { ThemeConfig } from 'react-select';
@@ -73,6 +74,7 @@ const Home: NextPage = () => {
   const [kelas, setKelas] = useState<string>('A');
 
   const [copyStatus, setCopyStatus] = useState<string>('Click to copy');
+  const [shareStatus, setShareStatus] = useState<string>('Click to copy shareable URL');
 
   const [filteredData, setFilteredData] = useState<DataMatkul[]>(filterData(semester));
 
@@ -264,6 +266,32 @@ const Home: NextPage = () => {
                       }}
                     >
                       <Button>Copy</Button>
+                    </CopyToClipboard>
+                  </span>
+                </Tippy>
+              </span>
+              <span className='ml-4'>
+                <Tippy
+                  animation='scale-subtle'
+                  hideOnClick={false}
+                  content={
+                    <span className='inline-flex flex-col items-center p-2 bg-dark rounded-md shadow-md border-thin'>
+                      {shareStatus}
+                    </span>
+                  }
+                >
+                  <span>
+                    <CopyToClipboard
+                      text={stringifyUrl({
+                        url: 'https://dtk-class.vercel.app/',
+                        query: { kode: matkul.kode, kelas, semester },
+                      })}
+                      onCopy={() => {
+                        setShareStatus('Copied shareable URL to clipboard 😳');
+                        setTimeout(() => setShareStatus('Click to copy shareable URL'), 1469);
+                      }}
+                    >
+                      <Button className='bg-amber-500'>Share</Button>
                     </CopyToClipboard>
                   </span>
                 </Tippy>

@@ -1,6 +1,5 @@
-import clsx from 'clsx';
-
 import UnstyledLink, { UnstyledLinkProps } from '@/components/links/UnstyledLink';
+import clsxm from '@/lib/clsxm';
 
 enum ButtonVariant {
   'primary',
@@ -17,7 +16,7 @@ type ButtonLinkProps = {
 const ButtonLink = ({ children, className = '', variant = 'primary', ...rest }: ButtonLinkProps) => (
   <UnstyledLink
     {...rest}
-    className={clsx(
+    className={clsxm(
       className,
       'inline-flex items-center px-4 py-2 font-semibold rounded',
       'focus:outline-none focus-visible:ring focus-visible:ring-primary-500',

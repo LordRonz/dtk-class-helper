@@ -1,8 +1,6 @@
-import clsx from 'clsx';
-import * as React from 'react';
-
 import CustomLink from '@/components/links/CustomLink';
 import { UnstyledLinkProps } from '@/components/links/UnstyledLink';
+import clsxm from '@/lib/clsxm';
 
 type ArrowLinkProps<C extends React.ElementType> = {
   as?: C;
@@ -10,17 +8,17 @@ type ArrowLinkProps<C extends React.ElementType> = {
 } & UnstyledLinkProps &
   React.ComponentProps<C>;
 
-export default function ArrowLink<C extends React.ElementType>({
+const ArrowLink = <C extends React.ElementType>({
   children,
   className,
   direction = 'right',
   as,
   ...rest
-}: ArrowLinkProps<C>) {
+}: ArrowLinkProps<C>) => {
   const Component = as || CustomLink;
 
   return (
-    <Component {...rest} className={clsx(className, 'gap-[0.25em] group', direction === 'left' && 'flex-row-reverse')}>
+    <Component {...rest} className={clsxm(className, 'gap-[0.25em] group', direction === 'left' && 'flex-row-reverse')}>
       <span>{children}</span>
       <svg
         viewBox='0 0 16 16'
@@ -28,7 +26,7 @@ export default function ArrowLink<C extends React.ElementType>({
         width='1em'
         fill='none'
         xmlns='http://www.w3.org/2000/svg'
-        className={clsx(
+        className={clsxm(
           'relative',
           'transition-transform duration-200',
           direction === 'right' ? 'motion-safe:-translate-x-1' : 'rotate-180',
@@ -44,7 +42,7 @@ export default function ArrowLink<C extends React.ElementType>({
           d='M1.75 8H11'
           strokeWidth='1.5'
           strokeLinecap='round'
-          className={clsx(
+          className={clsxm(
             'transition-all duration-200 origin-left',
             'opacity-0 motion-safe:-translate-x-1',
             'group-hover:opacity-100 group-hover:translate-x-0'
@@ -53,4 +51,6 @@ export default function ArrowLink<C extends React.ElementType>({
       </svg>
     </Component>
   );
-}
+};
+
+export default ArrowLink;

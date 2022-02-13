@@ -10,7 +10,7 @@ type Data = {
   dataMatkul: DataMatkul[];
 };
 
-export default function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
+const handler = (req: NextApiRequest, res: NextApiResponse<Data>) => {
   const {
     query: { search },
     method,
@@ -38,4 +38,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Data>)
       res.setHeader('Allow', ['GET']);
       res.status(405).end(`Method ${method} Not Allowed`);
   }
-}
+};
+
+export default handler;
