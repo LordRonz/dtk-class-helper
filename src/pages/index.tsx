@@ -74,7 +74,7 @@ const Home: NextPage = () => {
   const [kelas, setKelas] = useState<string>('A');
 
   const [copyStatus, setCopyStatus] = useState<string>('Click to copy');
-  const [shareStatus, setShareStatus] = useState<string>('Click to copy URL');
+  const [shareStatus, setShareStatus] = useState<string>('Click to copy shareable URL');
 
   const [filteredData, setFilteredData] = useState<DataMatkul[]>(filterData(semester));
 
@@ -287,11 +287,11 @@ const Home: NextPage = () => {
                         query: { kode: matkul.kode, kelas, semester },
                       })}
                       onCopy={() => {
-                        setShareStatus('Copied URL to clipboard 😳');
-                        setTimeout(() => setShareStatus('Click to copy URL'), 1469);
+                        setShareStatus('Copied shareable URL to clipboard 😳');
+                        setTimeout(() => setShareStatus('Click to copy shareable URL'), 1469);
                       }}
                     >
-                      <Button className='bg-amber-400'>Share</Button>
+                      <Button className='bg-amber-500'>Share</Button>
                     </CopyToClipboard>
                   </span>
                 </Tippy>
