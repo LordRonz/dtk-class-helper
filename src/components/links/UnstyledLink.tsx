@@ -8,7 +8,7 @@ export type UnstyledLinkProps = {
 } & React.ComponentPropsWithoutRef<'a'> &
   LinkProps;
 
-export default function UnstyledLink({ children, href, openNewTab, className, ...rest }: UnstyledLinkProps) {
+const UnstyledLink = ({ children, href, openNewTab, className, ...rest }: UnstyledLinkProps) => {
   const isNewTab = openNewTab ?? (href && !href.startsWith('/') && !href.startsWith('#'));
 
   if (!isNewTab) {
@@ -26,4 +26,6 @@ export default function UnstyledLink({ children, href, openNewTab, className, ..
       {children}
     </a>
   );
-}
+};
+
+export default UnstyledLink;

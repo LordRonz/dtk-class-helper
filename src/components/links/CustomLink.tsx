@@ -1,7 +1,7 @@
 import UnstyledLink, { UnstyledLinkProps } from '@/components/links/UnstyledLink';
 import clsxm from '@/lib/clsxm';
 
-export default function CustomLink({ children, className, ...rest }: UnstyledLinkProps) {
+const CustomLink = ({ children, className, ...rest }: UnstyledLinkProps) => {
   return (
     <UnstyledLink
       {...rest}
@@ -15,4 +15,6 @@ export default function CustomLink({ children, className, ...rest }: UnstyledLin
       {children}
     </UnstyledLink>
   );
-}
+};
+
+export default CustomLink;

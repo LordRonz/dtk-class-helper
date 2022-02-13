@@ -4,7 +4,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import type { DataMatkul } from '@/data/dataMatkul';
 import dataMatkul from '@/data/dataMatkul';
 
-export default function handler(req: NextApiRequest, res: NextApiResponse<DataMatkul>) {
+const handler = (req: NextApiRequest, res: NextApiResponse<DataMatkul>) => {
   const {
     query: { kode },
     method,
@@ -24,4 +24,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<DataMa
       res.setHeader('Allow', ['GET']);
       res.status(405).end(`Method ${method} Not Allowed`);
   }
-}
+};
+
+export default handler;
