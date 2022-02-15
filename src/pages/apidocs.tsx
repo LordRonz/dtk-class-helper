@@ -11,7 +11,7 @@ const ApiDocs: NextPage = () => (
     <Nav />
     <main>
       <section className='bg-black text-primary-50'>
-        <div className='min-h-screen py-16 space-y-10 text-primary-50 layout'>
+        <div className='layout min-h-screen space-y-10 py-16 text-primary-50'>
           <div className='space-y-4'>
             <h1 className='text-primary-200'>API</h1>
             <p>Method: GET</p>
@@ -23,7 +23,7 @@ const ApiDocs: NextPage = () => (
             </p>
             <p>Response: </p>
           </div>
-          <Pre lang='json' className='text-sm bg-gray-800'>
+          <Pre lang='json' className='bg-gray-800 text-sm'>
             <Code lang='json' className='language-json'>
               {`{
   "dataMatkul":[
@@ -65,7 +65,7 @@ const ApiDocs: NextPage = () => (
             </p>
             <p>Response: </p>
           </div>
-          <Pre lang='json' className='text-sm bg-gray-800'>
+          <Pre lang='json' className='bg-gray-800 text-sm'>
             <Code lang='json' className='language-json'>
               {`{
   "kode":"EC4201",
@@ -85,7 +85,7 @@ const ApiDocs: NextPage = () => (
             </p>
             <p>Response: </p>
           </div>
-          <Pre lang='json' className='text-sm bg-gray-800'>
+          <Pre lang='json' className='bg-gray-800 text-sm'>
             <Code lang='json' className='language-json'>
               {`{
   "dataMatkul":[

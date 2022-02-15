@@ -145,7 +145,7 @@ const Home: NextPage = () => {
       <Nav />
       <main>
         <section className='bg-black text-primary-50'>
-          <div className='min-h-screen py-10 space-y-10 text-primary-50 layout'>
+          <div className='layout min-h-screen space-y-10 py-10 text-primary-50'>
             <div className='space-y-8'>
               <h1 className='text-primary-200'>Daftar kelas Teknik Komputer ITS</h1>
               <h2>Langkah-langkah</h2>
@@ -167,7 +167,7 @@ const Home: NextPage = () => {
               <p>Semester 1 sama 2 ga banyak soalnya paketan.</p>
               <select
                 name='select'
-                className='py-2 pl-4 pr-8 border border-primary-500 rounded-lg focus:border-primary-400 focus:ring-primary-400 bg-black'
+                className='rounded-lg border border-primary-500 bg-black py-2 pl-4 pr-8 focus:border-primary-400 focus:ring-primary-400'
                 value={semester}
                 onChange={handleSemester}
               >
@@ -218,7 +218,7 @@ const Home: NextPage = () => {
                   hasilnya
                 </CustomLink>
               </p>
-              <p className='text-gray-300 !mt-2'>
+              <p className='!mt-2 text-gray-300'>
                 https://akademik.its.ac.id/lv_peserta.php
                 <br />
                 ?mkJur=
@@ -250,7 +250,7 @@ const Home: NextPage = () => {
                   animation='scale-subtle'
                   hideOnClick={false}
                   content={
-                    <span className='inline-flex flex-col items-center p-2 bg-dark rounded-md shadow-md border-thin'>
+                    <span className='bg-dark border-thin inline-flex flex-col items-center rounded-md p-2 shadow-md'>
                       {copyStatus}
                     </span>
                   }
@@ -275,7 +275,7 @@ const Home: NextPage = () => {
                   animation='scale-subtle'
                   hideOnClick={false}
                   content={
-                    <span className='inline-flex flex-col items-center p-2 bg-dark rounded-md shadow-md border-thin'>
+                    <span className='bg-dark border-thin inline-flex flex-col items-center rounded-md p-2 shadow-md'>
                       {shareStatus}
                     </span>
                   }

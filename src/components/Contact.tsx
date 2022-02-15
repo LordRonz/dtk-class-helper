@@ -34,7 +34,7 @@ const Contact = (): JSX.Element => {
   const [copyStatus, setCopyStatus] = useState<string>('Click to copy');
 
   return (
-    <div className='flex flex-row flex-1 items-center gap-x-10' id='contact'>
+    <div className='flex flex-1 flex-row items-center gap-x-10' id='contact'>
       {socials.map(({ label, link, icon }) => (
         <div key={label}>
           <UnstyledLink href={link} openNewTab={true} aria-label={label}>
@@ -48,7 +48,7 @@ const Contact = (): JSX.Element => {
           interactive
           hideOnClick={false}
           content={
-            <span className='inline-flex flex-col items-center p-2 bg-dark rounded-md shadow-md border-thin'>
+            <span className='bg-dark border-thin inline-flex flex-col items-center rounded-md p-2 shadow-md'>
               {copyStatus}
               <span className='inline-block font-bold text-primary-300'>{mail}</span>
             </span>

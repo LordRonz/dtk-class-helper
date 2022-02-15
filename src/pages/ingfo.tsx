@@ -15,7 +15,7 @@ const Ingfo: NextPage = () => {
       <Nav />
       <main>
         <section className='bg-black text-primary-50'>
-          <div className='min-h-screen py-16 space-y-10 text-primary-50 layout'>
+          <div className='layout min-h-screen space-y-10 py-16 text-primary-50'>
             <div className='space-y-10'>
               <div className='space-y-4'>
                 <h1 className='text-primary-200'>Ingfo</h1>
@@ -48,7 +48,7 @@ const Ingfo: NextPage = () => {
                 <Contact />
               </div>
             </div>
-            <div className='flex justify-center items-center'>
+            <div className='flex items-center justify-center'>
               <ArrowLink href='/' className='text-primary-200' direction='left'>
                 Balik ke Home
               </ArrowLink>
