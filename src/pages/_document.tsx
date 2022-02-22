@@ -10,7 +10,7 @@ class MyDocument extends Document {
     return (
       <Html lang='en'>
         <Head>
-          {!(process.env.CI === 'true') && (
+          {process.env.CI !== 'true' && (
             <script
               async
               defer

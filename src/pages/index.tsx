@@ -86,11 +86,11 @@ const Home: NextPage = () => {
     if (!newValue) return;
     const { value } = newValue;
     const kode = value;
-    const matkul = dataMatkul.find((datum) => datum.kode === kode);
-    if (!matkul) return;
-    setSemester(matkul.sem);
-    setFilteredData(filterData(matkul.sem));
-    setMatkul(matkul);
+    const mk = dataMatkul.find((datum) => datum.kode === kode);
+    if (!mk) return;
+    setSemester(mk.sem);
+    setFilteredData(filterData(mk.sem));
+    setMatkul(mk);
   };
 
   const handleSemester = (e: React.ChangeEvent<HTMLSelectElement>) => {
