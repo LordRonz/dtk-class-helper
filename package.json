@@ -56,7 +56,7 @@
     "eslint-plugin-unused-imports": "^2.0.0",
     "husky": "^7.0.4",
     "lint-staged": "^12.3.7",
-    "local-cypress": "^1.2.3",
+    "local-cypress": "^1.2.4",
     "next-sitemap": "^2.5.10",
     "postcss": "^8.4.12",
     "prettier": "^2.6.0",
