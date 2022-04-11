@@ -8,6 +8,12 @@ import nProgress from 'nprogress';
 import { useEffect } from 'react';
 import { hotjar } from 'react-hotjar';
 
+declare module 'next-themes' {
+  interface ThemeProviderProps {
+    children: React.ReactNode;
+  }
+}
+
 // hotjar config
 const [hjid, hjsv] = [2768716, 6];
 
