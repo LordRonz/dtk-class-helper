@@ -8,6 +8,7 @@
     "postbuild": "next-sitemap",
     "export": "next export",
     "start": "next start",
+    "deduplicate": "npx yarn-deduplicate && yarn install",
     "lint": "next lint",
     "lint:fix": "eslint src --fix && yarn format",
     "lint:strict": "eslint --max-warnings=0 src",
