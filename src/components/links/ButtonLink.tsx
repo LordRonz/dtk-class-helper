@@ -1,23 +1,23 @@
-import UnstyledLink, { UnstyledLinkProps } from '@/components/links/UnstyledLink';
+import type { UnstyledLinkProps } from '@/components/links/UnstyledLink';
+import UnstyledLink from '@/components/links/UnstyledLink';
 import clsxm from '@/lib/clsxm';
 
-enum ButtonVariant {
-  'primary',
-  'outline',
-  'ghost',
-  'light',
-  'dark',
+const enum ButtonVariant {
+  primary,
+  outline,
+  ghost,
+  light,
+  dark,
 }
 
-type ButtonLinkProps = {
-  variant?: keyof typeof ButtonVariant;
+export type ButtonLinkProps = {
+  readonly variant?: keyof typeof ButtonVariant;
 } & UnstyledLinkProps;
 
 const ButtonLink = ({ children, className = '', variant = 'primary', ...rest }: ButtonLinkProps) => (
   <UnstyledLink
     {...rest}
     className={clsxm(
-      className,
       'inline-flex items-center rounded px-4 py-2 font-semibold',
       'focus:outline-none focus-visible:ring focus-visible:ring-primary-500',
       'shadow-sm',
@@ -33,19 +33,19 @@ const ButtonLink = ({ children, className = '', variant = 'primary', ...rest }: 
           'disabled:bg-primary-600 disabled:hover:bg-primary-600',
         ],
         variant === 'outline' && [
-          'text-primary-50',
+          'text-primary-500',
           'border border-primary-500',
           'hover:bg-primary-700 hover:text-primary-50 active:bg-primary-600 disabled:bg-primary-100',
         ],
         variant === 'ghost' && [
-          'text-primary-50',
+          'text-primary-500',
           'shadow-none',
           'hover:bg-primary-700 hover:text-primary-50 active:bg-primary-600 disabled:bg-primary-100',
         ],
         variant === 'light' && [
           'bg-white text-black',
           'border border-gray-300',
-          'hover:text-dark hover:bg-gray-100',
+          'hover:bg-gray-100 hover:text-dark',
           'active:bg-white/80 disabled:bg-gray-200',
         ],
         variant === 'dark' && [
@@ -54,7 +54,8 @@ const ButtonLink = ({ children, className = '', variant = 'primary', ...rest }: 
           'hover:bg-gray-800 active:bg-gray-700 disabled:bg-gray-700',
         ],
       ],
-      'disabled:cursor-not-allowed'
+      'disabled:cursor-not-allowed',
+      className
     )}
   >
     {children}

@@ -10,8 +10,8 @@ const ApiDocs: NextPage = () => (
     <Seo templateTitle='API Docs' />
     <Nav />
     <main>
-      <section className='bg-black text-primary-50'>
-        <div className='layout min-h-screen space-y-10 py-16 text-primary-50'>
+      <section className=''>
+        <div className='layout min-h-screen space-y-10 py-16'>
           <div className='space-y-4'>
             <h1 className='text-primary-200'>API</h1>
             <p>Method: GET</p>
@@ -23,7 +23,7 @@ const ApiDocs: NextPage = () => (
             </p>
             <p>Response: </p>
           </div>
-          <Pre lang='json' className='bg-gray-800 text-sm'>
+          <Pre lang='json' className='bg-gray-300 text-sm dark:bg-gray-800'>
             <Code lang='json' className='language-json'>
               {`{
   "dataMatkul":[
@@ -65,7 +65,7 @@ const ApiDocs: NextPage = () => (
             </p>
             <p>Response: </p>
           </div>
-          <Pre lang='json' className='bg-gray-800 text-sm'>
+          <Pre lang='json' className='bg-gray-300 text-sm dark:bg-gray-800'>
             <Code lang='json' className='language-json'>
               {`{
   "kode":"EC4201",
@@ -85,7 +85,7 @@ const ApiDocs: NextPage = () => (
             </p>
             <p>Response: </p>
           </div>
-          <Pre lang='json' className='bg-gray-800 text-sm'>
+          <Pre lang='json' className='bg-gray-300 text-sm dark:bg-gray-800'>
             <Code lang='json' className='language-json'>
               {`{
   "dataMatkul":[

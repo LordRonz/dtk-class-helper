@@ -19,8 +19,11 @@ class MyDocument extends Document {
               data-domains='dtk-class.vercel.app'
             />
           )}
+          <link rel='preconnect' href='https://fonts.googleapis.com' />
+          <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin='anonymous' />
+          <link href='https://fonts.googleapis.com/css2?family=Inter&display=swap' rel='stylesheet' />
         </Head>
-        <body>
+        <body className='bg-light text-dark dark:bg-dark dark:text-primary-50'>
           <Main />
           <NextScript />
         </body>

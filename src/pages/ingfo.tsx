@@ -14,8 +14,8 @@ const Ingfo: NextPage = () => {
       <Seo templateTitle='Ingfo' />
       <Nav />
       <main>
-        <section className='bg-black text-primary-50'>
-          <div className='layout min-h-screen space-y-10 py-16 text-primary-50'>
+        <section className=''>
+          <div className='layout min-h-screen space-y-10 py-16'>
             <div className='space-y-10'>
               <div className='space-y-4'>
                 <h1 className='text-primary-200'>Ingfo</h1>

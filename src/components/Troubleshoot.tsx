@@ -11,7 +11,7 @@ const Troubleshoot = (): JSX.Element => {
 
   return (
     <Disclosure as='div'>
-      <Disclosure.Button className='inline-flex items-center gap-2 text-lg font-bold text-gray-300 hover:text-primary-200 focus-visible:text-primary-400 md:text-2xl'>
+      <Disclosure.Button className='inline-flex items-center gap-2 text-lg font-bold text-gray-500 hover:text-primary-200 focus-visible:text-primary-400 dark:text-gray-300 md:text-2xl'>
         <HiQuestionMarkCircle className='flex-shrink-0' /> <span>Troubleshoot ? Klik disini</span>
       </Disclosure.Button>
 

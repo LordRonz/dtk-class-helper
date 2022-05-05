@@ -5,6 +5,7 @@ import 'tippy.js/animations/scale-subtle.css';
 import Tippy from '@tippyjs/react';
 import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
+import { useTheme } from 'next-themes';
 import { stringifyUrl } from 'query-string';
 import { useEffect, useMemo, useState } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
@@ -68,6 +69,7 @@ const selectTheme: ThemeConfig = (theme) => ({
 const [mkSemester, mkTahun] = ['2', '2021'];
 
 const Home: NextPage = () => {
+  const { theme } = useTheme();
   const router = useRouter();
   const [semester, setSemester] = useState<string>(s);
   const [matkul, setMatkul] = useState<DataMatkul>(dataMatkul.find((datum) => datum.kode === `EC4${s}01`) ?? dataMatkul[0]);
@@ -144,8 +146,8 @@ const Home: NextPage = () => {
       <Seo />
       <Nav />
       <main>
-        <section className='bg-black text-primary-50'>
-          <div className='layout min-h-screen space-y-10 py-10 text-primary-50'>
+        <section className=''>
+          <div className='layout min-h-screen space-y-10 py-10'>
             <div className='space-y-8'>
               <h1 className='text-primary-200'>Daftar kelas Teknik Komputer ITS</h1>
               <h2>Langkah-langkah</h2>
@@ -167,7 +169,7 @@ const Home: NextPage = () => {
               <p>Semester 1 sama 2 ga banyak soalnya paketan.</p>
               <select
                 name='select'
-                className='rounded-lg border border-primary-500 bg-black py-2 pl-4 pr-8 focus:border-primary-400 focus:ring-primary-400'
+                className='rounded-lg border border-primary-500 py-2 pl-4 pr-8 transition-colors focus:border-primary-400 focus:ring-primary-400 dark:bg-black'
                 value={semester}
                 onChange={handleSemester}
               >
@@ -183,7 +185,7 @@ const Home: NextPage = () => {
                 key={`select-${semester}-${matkul.kode}`}
                 onChange={handleCariMatkul}
                 defaultValue={cariMatkulOptions.find((mk) => mk.value === matkul?.kode) ?? cariMatkulOptions[0]}
-                theme={selectTheme}
+                theme={theme === 'dark' ? selectTheme : undefined}
                 className='max-w-md'
                 options={cariMatkulOptions}
               />
@@ -194,7 +196,7 @@ const Home: NextPage = () => {
                 key={`select-${semester}-${matkul.kode}`}
                 onChange={handleMatkul}
                 defaultValue={{ label: matkul?.nama as string, value: matkul?.kode as string }}
-                theme={selectTheme}
+                theme={theme === 'dark' ? selectTheme : undefined}
                 className='max-w-md'
                 options={matkulOptions}
               />
@@ -205,7 +207,7 @@ const Home: NextPage = () => {
                 key={`select-${kelas}`}
                 onChange={(newValue) => setKelas(newValue?.value || 'A')}
                 defaultValue={classesOptions.find(({ value }) => value === kelas) ?? classesOptions[0]}
-                theme={selectTheme}
+                theme={theme === 'dark' ? selectTheme : undefined}
                 className='max-w-xs'
                 options={classesOptions}
               />
@@ -218,7 +220,7 @@ const Home: NextPage = () => {
                   hasilnya
                 </CustomLink>
               </p>
-              <p className='!mt-2 text-gray-300'>
+              <p className='!mt-2 text-gray-600 dark:text-gray-300'>
                 https://akademik.its.ac.id/lv_peserta.php
                 <br />
                 ?mkJur=
@@ -250,7 +252,7 @@ const Home: NextPage = () => {
                   animation='scale-subtle'
                   hideOnClick={false}
                   content={
-                    <span className='bg-dark border-thin inline-flex flex-col items-center rounded-md p-2 shadow-md'>
+                    <span className='border-thin inline-flex flex-col items-center rounded-md p-2 shadow-md'>
                       {copyStatus}
                     </span>
                   }
@@ -275,7 +277,7 @@ const Home: NextPage = () => {
                   animation='scale-subtle'
                   hideOnClick={false}
                   content={
-                    <span className='bg-dark border-thin inline-flex flex-col items-center rounded-md p-2 shadow-md'>
+                    <span className='border-thin inline-flex flex-col items-center rounded-md bg-dark p-2 shadow-md'>
                       {shareStatus}
                     </span>
                   }
@@ -301,7 +303,7 @@ const Home: NextPage = () => {
               <Troubleshoot />
             </div>
             <div id='comment-section'>
-              <Comment />
+              <Comment theme={theme} />
             </div>
           </div>
           <Footer />
