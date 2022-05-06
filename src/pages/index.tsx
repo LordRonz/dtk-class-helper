@@ -72,6 +72,7 @@ const [mkSemester, mkTahun] = ['2', '2021'];
 const Home: NextPage = () => {
   const { theme } = useTheme();
   const router = useRouter();
+  const [mounted, setMounted] = useState<boolean>(false);
   const [semester, setSemester] = useState<string>(s);
   const [matkul, setMatkul] = useState<DataMatkul>(
     dataMatkul.find((datum) => datum.kode === `EC4${s}01`) ?? dataMatkul[0]
@@ -131,6 +132,10 @@ const Home: NextPage = () => {
     mkThn = mkThn ?? mkTahun;
     return [mkSem as string, mkThn as string];
   }, [router.isReady, router.query]);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     if (!router.isReady) return;
@@ -210,7 +215,7 @@ const Home: NextPage = () => {
                   cariMatkulOptions.find((mk) => mk.value === matkul?.kode) ??
                   cariMatkulOptions[0]
                 }
-                theme={theme === 'dark' ? selectTheme : undefined}
+                theme={mounted && theme === 'dark' ? selectTheme : undefined}
                 className='max-w-md'
                 options={cariMatkulOptions}
               />
@@ -224,7 +229,7 @@ const Home: NextPage = () => {
                   label: matkul?.nama as string,
                   value: matkul?.kode as string,
                 }}
-                theme={theme === 'dark' ? selectTheme : undefined}
+                theme={mounted && theme === 'dark' ? selectTheme : undefined}
                 className='max-w-md'
                 options={matkulOptions}
               />
@@ -238,7 +243,7 @@ const Home: NextPage = () => {
                   classesOptions.find(({ value }) => value === kelas) ??
                   classesOptions[0]
                 }
-                theme={theme === 'dark' ? selectTheme : undefined}
+                theme={mounted && theme === 'dark' ? selectTheme : undefined}
                 className='max-w-xs'
                 options={classesOptions}
               />
