@@ -30,7 +30,9 @@ const handler = (req: NextApiRequest, res: NextApiResponse<Data>) => {
         return;
       }
       const searchRegex = new RegExp(escapedSearch, 'i');
-      const filteredData = dataMatkul.filter((datum) => searchRegex.test(datum.kode) || searchRegex.test(datum.nama));
+      const filteredData = dataMatkul.filter(
+        (datum) => searchRegex.test(datum.kode) || searchRegex.test(datum.nama)
+      );
       res.status(200).json({ dataMatkul: filteredData });
       break;
     }

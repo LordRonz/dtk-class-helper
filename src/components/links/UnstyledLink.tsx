@@ -8,8 +8,15 @@ export type UnstyledLinkProps = {
 } & React.ComponentPropsWithoutRef<'a'> &
   LinkProps;
 
-const UnstyledLink = ({ children, href, openNewTab, className, ...rest }: UnstyledLinkProps) => {
-  const isNewTab = openNewTab ?? (href && !href.startsWith('/') && !href.startsWith('#'));
+const UnstyledLink = ({
+  children,
+  href,
+  openNewTab,
+  className,
+  ...rest
+}: UnstyledLinkProps) => {
+  const isNewTab =
+    openNewTab ?? (href && !href.startsWith('/') && !href.startsWith('#'));
 
   if (!isNewTab) {
     return (
@@ -22,7 +29,13 @@ const UnstyledLink = ({ children, href, openNewTab, className, ...rest }: Unstyl
   }
 
   return (
-    <a target='_blank' rel='noopener noreferrer' href={href} {...rest} className={className}>
+    <a
+      target='_blank'
+      rel='noopener noreferrer'
+      href={href}
+      {...rest}
+      className={className}
+    >
       {children}
     </a>
   );

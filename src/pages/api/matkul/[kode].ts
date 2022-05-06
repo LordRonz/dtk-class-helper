@@ -10,7 +10,9 @@ const handler = (req: NextApiRequest, res: NextApiResponse<DataMatkul>) => {
     method,
   } = req;
 
-  const matkul = dataMatkul.find((mk) => mk.kode.toLowerCase() == kode.toString().toLowerCase());
+  const matkul = dataMatkul.find(
+    (mk) => mk.kode.toLowerCase() == kode.toString().toLowerCase()
+  );
 
   switch (method) {
     case 'GET':

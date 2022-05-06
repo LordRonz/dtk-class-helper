@@ -14,7 +14,12 @@ export type ButtonLinkProps = {
   readonly variant?: keyof typeof ButtonVariant;
 } & UnstyledLinkProps;
 
-const ButtonLink = ({ children, className = '', variant = 'primary', ...rest }: ButtonLinkProps) => (
+const ButtonLink = ({
+  children,
+  className = '',
+  variant = 'primary',
+  ...rest
+}: ButtonLinkProps) => (
   <UnstyledLink
     {...rest}
     className={clsxm(

@@ -16,17 +16,23 @@ const socials = [
   {
     label: 'GitHub',
     link: 'https://lr-link.vercel.app/github',
-    icon: <SiGithub className='transition-all duration-300 hover:text-primary-300' />,
+    icon: (
+      <SiGithub className='transition-all duration-300 hover:text-primary-300' />
+    ),
   },
   {
     label: 'GitLab',
     link: 'https://lr-link.vercel.app/gitlab',
-    icon: <SiGitlab className='transition-all duration-300 hover:text-primary-300' />,
+    icon: (
+      <SiGitlab className='transition-all duration-300 hover:text-primary-300' />
+    ),
   },
   {
     label: 'LinkedIn',
     link: 'https://lr-link.vercel.app/linkedin',
-    icon: <SiLinkedin className='transition-all duration-300 hover:text-primary-300' />,
+    icon: (
+      <SiLinkedin className='transition-all duration-300 hover:text-primary-300' />
+    ),
   },
 ] as const;
 
@@ -38,7 +44,11 @@ const Contact = (): JSX.Element => {
       {socials.map(({ label, link, icon }) => (
         <div key={label}>
           <UnstyledLink href={link} openNewTab={true} aria-label={label}>
-            <IconContext.Provider value={{ size: '2em', style: { cursor: 'pointer' } }}>{icon}</IconContext.Provider>
+            <IconContext.Provider
+              value={{ size: '2em', style: { cursor: 'pointer' } }}
+            >
+              {icon}
+            </IconContext.Provider>
           </UnstyledLink>
         </div>
       ))}
@@ -50,7 +60,9 @@ const Contact = (): JSX.Element => {
           content={
             <span className='border-thin inline-flex flex-col items-center rounded-md bg-dark p-2 shadow-md'>
               {copyStatus}
-              <span className='inline-block font-bold text-primary-300'>{mail}</span>
+              <span className='inline-block font-bold text-primary-300'>
+                {mail}
+              </span>
             </span>
           }
         >
@@ -63,7 +75,9 @@ const Contact = (): JSX.Element => {
               }}
             >
               <span>
-                <IconContext.Provider value={{ size: '2.3em', style: { cursor: 'pointer' } }}>
+                <IconContext.Provider
+                  value={{ size: '2.3em', style: { cursor: 'pointer' } }}
+                >
                   <FiMail className='transition-all duration-300 hover:text-primary-300' />
                 </IconContext.Provider>
               </span>

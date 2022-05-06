@@ -24,7 +24,8 @@ import Troubleshoot from '@/components/Troubleshoot';
 import type { DataMatkul } from '@/data/dataMatkul';
 import dataMatkul, { cariMatkul } from '@/data/dataMatkul';
 
-const filterData = (semester: string): DataMatkul[] => dataMatkul.filter((datum) => datum.sem === semester);
+const filterData = (semester: string): DataMatkul[] =>
+  dataMatkul.filter((datum) => datum.sem === semester);
 
 const cariMatkulOptions = cariMatkul.map((item) => ({
   label: item.nama,
@@ -72,19 +73,29 @@ const Home: NextPage = () => {
   const { theme } = useTheme();
   const router = useRouter();
   const [semester, setSemester] = useState<string>(s);
-  const [matkul, setMatkul] = useState<DataMatkul>(dataMatkul.find((datum) => datum.kode === `EC4${s}01`) ?? dataMatkul[0]);
+  const [matkul, setMatkul] = useState<DataMatkul>(
+    dataMatkul.find((datum) => datum.kode === `EC4${s}01`) ?? dataMatkul[0]
+  );
   const [kelas, setKelas] = useState<string>('A');
 
   const [copyStatus, setCopyStatus] = useState<string>('Click to copy');
-  const [shareStatus, setShareStatus] = useState<string>('Click to copy shareable URL');
+  const [shareStatus, setShareStatus] = useState<string>(
+    'Click to copy shareable URL'
+  );
 
-  const [filteredData, setFilteredData] = useState<DataMatkul[]>(filterData(semester));
+  const [filteredData, setFilteredData] = useState<DataMatkul[]>(
+    filterData(semester)
+  );
 
   const handleMatkul = (newValue: { label: string; value: string } | null) => {
-    setMatkul(dataMatkul.find((datum) => datum.kode === newValue?.value) as DataMatkul);
+    setMatkul(
+      dataMatkul.find((datum) => datum.kode === newValue?.value) as DataMatkul
+    );
   };
 
-  const handleCariMatkul = (newValue: { label: string; value: string } | null) => {
+  const handleCariMatkul = (
+    newValue: { label: string; value: string } | null
+  ) => {
     if (!newValue) return;
     const { value } = newValue;
     const kode = value;
@@ -134,7 +145,9 @@ const Home: NextPage = () => {
       setMatkul(temp[0]);
     }
     if (kode) {
-      const k = dataMatkul.find((datum) => datum.kode === (kode as string)) ?? dataMatkul[0];
+      const k =
+        dataMatkul.find((datum) => datum.kode === (kode as string)) ??
+        dataMatkul[0];
       setMatkul(k);
       setSemester(k.sem);
       setFilteredData(filterData(k.sem));
@@ -149,18 +162,27 @@ const Home: NextPage = () => {
         <section className=''>
           <div className='layout min-h-screen space-y-10 py-10'>
             <div className='space-y-8'>
-              <h1 className='text-primary-200'>Daftar kelas Teknik Komputer ITS</h1>
+              <h1 className='text-primary-200'>
+                Daftar kelas Teknik Komputer ITS
+              </h1>
               <h2>Langkah-langkah</h2>
             </div>
             <div className='space-y-4' id='step1'>
               <h3>1. Login Sistem Informasi Akademik ITS (SIAKAD)</h3>
               <p>
                 Dibuka sampai keliatan laman SIAKAD.{' '}
-                <CustomLink href={komi ? '/ssanintegra1.png' : '/ssanintegra.png'} openNewTab className='text-primary-100'>
+                <CustomLink
+                  href={komi ? '/ssanintegra1.png' : '/ssanintegra.png'}
+                  openNewTab
+                  className='text-primary-100'
+                >
                   Contoh tampilan seperti ini
                 </CustomLink>
               </p>
-              <ArrowLink className='text-primary-100' href='https://akademik.its.ac.id/myitsauth.php'>
+              <ArrowLink
+                className='text-primary-100'
+                href='https://akademik.its.ac.id/myitsauth.php'
+              >
                 Buka SIAKAD
               </ArrowLink>
             </div>
@@ -184,7 +206,10 @@ const Home: NextPage = () => {
               <Select
                 key={`select-${semester}-${matkul.kode}`}
                 onChange={handleCariMatkul}
-                defaultValue={cariMatkulOptions.find((mk) => mk.value === matkul?.kode) ?? cariMatkulOptions[0]}
+                defaultValue={
+                  cariMatkulOptions.find((mk) => mk.value === matkul?.kode) ??
+                  cariMatkulOptions[0]
+                }
                 theme={theme === 'dark' ? selectTheme : undefined}
                 className='max-w-md'
                 options={cariMatkulOptions}
@@ -195,7 +220,10 @@ const Home: NextPage = () => {
               <Select
                 key={`select-${semester}-${matkul.kode}`}
                 onChange={handleMatkul}
-                defaultValue={{ label: matkul?.nama as string, value: matkul?.kode as string }}
+                defaultValue={{
+                  label: matkul?.nama as string,
+                  value: matkul?.kode as string,
+                }}
                 theme={theme === 'dark' ? selectTheme : undefined}
                 className='max-w-md'
                 options={matkulOptions}
@@ -206,7 +234,10 @@ const Home: NextPage = () => {
               <Select
                 key={`select-${kelas}`}
                 onChange={(newValue) => setKelas(newValue?.value || 'A')}
-                defaultValue={classesOptions.find(({ value }) => value === kelas) ?? classesOptions[0]}
+                defaultValue={
+                  classesOptions.find(({ value }) => value === kelas) ??
+                  classesOptions[0]
+                }
                 theme={theme === 'dark' ? selectTheme : undefined}
                 className='max-w-xs'
                 options={classesOptions}
@@ -216,7 +247,11 @@ const Home: NextPage = () => {
               <h3>5. Buka link daftar kelas</h3>
               <p>
                 Kira-kira gini{' '}
-                <CustomLink href='/example.png' openNewTab className='text-primary-100'>
+                <CustomLink
+                  href='/example.png'
+                  openNewTab
+                  className='text-primary-100'
+                >
                   hasilnya
                 </CustomLink>
               </p>
@@ -241,7 +276,9 @@ const Home: NextPage = () => {
 
               <ButtonLink
                 variant='outline'
-                href={`https://akademik.its.ac.id/lv_peserta.php?mkJur=${matkul?.mkjur}&mkID=${
+                href={`https://akademik.its.ac.id/lv_peserta.php?mkJur=${
+                  matkul?.mkjur
+                }&mkID=${
                   matkul?.kode
                 }&mkSem=${mkSem}&mkThn=${mkThn}&mkKelas=${kelas.toUpperCase()}`}
               >
@@ -259,7 +296,9 @@ const Home: NextPage = () => {
                 >
                   <span>
                     <CopyToClipboard
-                      text={`https://akademik.its.ac.id/lv_peserta.php?mkJur=${matkul?.mkjur}&mkID=${
+                      text={`https://akademik.its.ac.id/lv_peserta.php?mkJur=${
+                        matkul?.mkjur
+                      }&mkID=${
                         matkul?.kode
                       }&mkSem=${mkSem}&mkThn=${mkThn}&mkKelas=${kelas.toUpperCase()}`}
                       onCopy={() => {
@@ -290,7 +329,10 @@ const Home: NextPage = () => {
                       })}
                       onCopy={() => {
                         setShareStatus('Copied shareable URL to clipboard 😳');
-                        setTimeout(() => setShareStatus('Click to copy shareable URL'), 1469);
+                        setTimeout(
+                          () => setShareStatus('Click to copy shareable URL'),
+                          1469
+                        );
                       }}
                     >
                       <Button className='bg-amber-500'>Share</Button>

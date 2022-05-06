@@ -4,10 +4,15 @@ const { fontFamily } = require('tailwindcss/defaultTheme');
 const withOpacity =
   (variable) =>
   ({ opacityValue }) =>
-    opacityValue === undefined ? `rgb(var(${variable}))` : `rgb(var(${variable}) / ${opacityValue})`;
+    opacityValue === undefined
+      ? `rgb(var(${variable}))`
+      : `rgb(var(${variable}) / ${opacityValue})`;
 
 const getColorShades = (shades, name = 'primary') =>
-  shades.reduce((a, v) => ({ ...a, [v]: withOpacity(`--tw-clr-${name}-${v}`) }), {});
+  shades.reduce(
+    (a, v) => ({ ...a, [v]: withOpacity(`--tw-clr-${name}-${v}`) }),
+    {}
+  );
 
 /** @type {import("@types/tailwindcss/tailwind-config").TailwindConfig } */
 module.exports = {

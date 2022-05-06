@@ -63,7 +63,7 @@ const Button = ({
           variant === 'light' && [
             'bg-white text-black',
             'border border-gray-300',
-            'hover:text-dark hover:bg-gray-100',
+            'hover:bg-gray-100 hover:text-dark',
             'active:bg-white/80 disabled:bg-gray-200',
           ],
           variant === 'dark' && [
@@ -73,18 +73,22 @@ const Button = ({
           ],
         ],
         'disabled:cursor-not-allowed',
-        isLoading && 'relative !cursor-wait !text-transparent !transition-none hover:!text-transparent',
+        isLoading &&
+          'relative !cursor-wait !text-transparent !transition-none hover:!text-transparent',
         className
       )}
       {...rest}
     >
       {isLoading && (
         <div
-          className={clsxm('absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2', {
-            'text-white': variant === 'dark' || variant === 'primary',
-            'text-black': variant === 'light',
-            'text-primary-500': variant === 'outline' || variant === 'ghost',
-          })}
+          className={clsxm(
+            'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2',
+            {
+              'text-white': variant === 'dark' || variant === 'primary',
+              'text-black': variant === 'light',
+              'text-primary-500': variant === 'outline' || variant === 'ghost',
+            }
+          )}
         >
           <ImSpinner2 className='animate-spin' />
         </div>

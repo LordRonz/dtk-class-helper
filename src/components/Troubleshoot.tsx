@@ -12,7 +12,8 @@ const Troubleshoot = (): JSX.Element => {
   return (
     <Disclosure as='div'>
       <Disclosure.Button className='inline-flex items-center gap-2 text-lg font-bold text-gray-500 hover:text-primary-200 focus-visible:text-primary-400 dark:text-gray-300 md:text-2xl'>
-        <HiQuestionMarkCircle className='flex-shrink-0' /> <span>Troubleshoot ? Klik disini</span>
+        <HiQuestionMarkCircle className='flex-shrink-0' />{' '}
+        <span>Troubleshoot ? Klik disini</span>
       </Disclosure.Button>
 
       <Transition
@@ -28,11 +29,19 @@ const Troubleshoot = (): JSX.Element => {
             <p className='mb-4'>
               Kalo muncul tulisan {'"'}Maaf anda tidak berhak akses{'"'},
             </p>
-            <Image src='/error.png' width='312' height='52' alt='Error: Maaf anda tidak berhak akses' />
+            <Image
+              src='/error.png'
+              width='312'
+              height='52'
+              alt='Error: Maaf anda tidak berhak akses'
+            />
           </div>
           <p>
             Artinya km belum terlogin-kan di SIAKAD, login dulu{' '}
-            <ArrowLink className='text-primary-100' href='https://akademik.its.ac.id/myitsauth.php'>
+            <ArrowLink
+              className='text-primary-100'
+              href='https://akademik.its.ac.id/myitsauth.php'
+            >
               disini
             </ArrowLink>
           </p>

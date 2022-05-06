@@ -18,7 +18,14 @@ const ArrowLink = <C extends React.ElementType>({
   const Component = as || CustomLink;
 
   return (
-    <Component {...rest} className={clsxm(className, 'group gap-[0.25em]', direction === 'left' && 'flex-row-reverse')}>
+    <Component
+      {...rest}
+      className={clsxm(
+        className,
+        'group gap-[0.25em]',
+        direction === 'left' && 'flex-row-reverse'
+      )}
+    >
       <span>{children}</span>
       <svg
         viewBox='0 0 16 16'

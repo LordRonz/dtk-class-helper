@@ -5,7 +5,9 @@ const defaultMeta = {
   title: 'DTK Class Helper',
   siteName: process.env.NEXT_PUBLIC_HOSTNAME || 'dtk-class.vercel.app',
   description: 'Helper for Computer Engineering ITS Class List',
-  url: process.env.NEXT_PUBLIC_HOSTNAME ? `https://${process.env.NEXT_PUBLIC_HOSTNAME}` : 'https://dtk-class.vercel.app',
+  url: process.env.NEXT_PUBLIC_HOSTNAME
+    ? `https://${process.env.NEXT_PUBLIC_HOSTNAME}`
+    : 'https://dtk-class.vercel.app',
   image: '/komi.png',
   type: 'website',
   robots: 'follow, index',
@@ -24,7 +26,9 @@ const Seo = (props: SeoProps) => {
     ...props,
   };
 
-  meta['title'] = props.templateTitle ? `${props.templateTitle} | ${meta.siteName}` : meta.title;
+  meta['title'] = props.templateTitle
+    ? `${props.templateTitle} | ${meta.siteName}`
+    : meta.title;
 
   return (
     <Head>
@@ -50,7 +54,10 @@ const Seo = (props: SeoProps) => {
         <link key={linkProps.href} {...linkProps} />
       ))}
       <meta name='msapplication-TileColor' content='#000000' />
-      <meta name='msapplication-TileImage' content='/favicon/ms-icon-150x150.png' />
+      <meta
+        name='msapplication-TileImage'
+        content='/favicon/ms-icon-150x150.png'
+      />
       <meta name='theme-color' content='#000000' />
     </Head>
   );

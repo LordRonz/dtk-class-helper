@@ -17,7 +17,11 @@ const ApiDocs: NextPage = () => (
             <p>Method: GET</p>
             <p>
               URL:{' '}
-              <UnstyledLink href='/api/matkul' openNewTab className='text-primary-200'>
+              <UnstyledLink
+                href='/api/matkul'
+                openNewTab
+                className='text-primary-200'
+              >
                 <code>/api/matkul</code>
               </UnstyledLink>
             </p>
@@ -59,7 +63,11 @@ const ApiDocs: NextPage = () => (
             <p>Method: GET</p>
             <p>
               URL:{' '}
-              <UnstyledLink href='/api/matkul/EC4201' openNewTab className='text-primary-200'>
+              <UnstyledLink
+                href='/api/matkul/EC4201'
+                openNewTab
+                className='text-primary-200'
+              >
                 <code>/api/matkul/EC4201</code>
               </UnstyledLink>
             </p>
@@ -79,7 +87,11 @@ const ApiDocs: NextPage = () => (
             <p>Method: GET</p>
             <p>
               URL:{' '}
-              <UnstyledLink href='/api/matkul?search=kuliah' openNewTab className='text-primary-200'>
+              <UnstyledLink
+                href='/api/matkul?search=kuliah'
+                openNewTab
+                className='text-primary-200'
+              >
                 <code>/api/matkul?search=kuliah</code>
               </UnstyledLink>
             </p>

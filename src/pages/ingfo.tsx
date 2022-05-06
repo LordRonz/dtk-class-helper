@@ -20,21 +20,38 @@ const Ingfo: NextPage = () => {
               <div className='space-y-4'>
                 <h1 className='text-primary-200'>Ingfo</h1>
                 <p>
-                  Situs ini {'"'}terinspirasi{'"'} dari punyanya informatika, buatannya si{' '}
-                  <CustomLink href='https://theodorusclarence.com'>Clarence</CustomLink>. Nih{' '}
-                  <CustomLink href='https://class.thcl.dev/'>linknya</CustomLink>
+                  Situs ini {'"'}terinspirasi{'"'} dari punyanya informatika,
+                  buatannya si{' '}
+                  <CustomLink href='https://theodorusclarence.com'>
+                    Clarence
+                  </CustomLink>
+                  . Nih{' '}
+                  <CustomLink href='https://class.thcl.dev/'>
+                    linknya
+                  </CustomLink>
                 </p>
-                <p>Kalau ada bug atau saran fitur bisa bikin issue atau kalo bisa PR ke repo berikut:</p>
-                <ArrowLink href='https://github.com/lordronz/dtk-class-helper'>Source code</ArrowLink>
                 <p>
-                  Bisa jg lewat <CustomLink href='#comment-section'>comment section</CustomLink> yg ada disini atau di{' '}
+                  Kalau ada bug atau saran fitur bisa bikin issue atau kalo bisa
+                  PR ke repo berikut:
+                </p>
+                <ArrowLink href='https://github.com/lordronz/dtk-class-helper'>
+                  Source code
+                </ArrowLink>
+                <p>
+                  Bisa jg lewat{' '}
+                  <CustomLink href='#comment-section'>
+                    comment section
+                  </CustomLink>{' '}
+                  yg ada disini atau di{' '}
                   <CustomLink href='/#comment-section'>Home</CustomLink>
                 </p>
                 <p>Atau pm aja sih ya, buat yg kenal</p>
                 <p>
-                  Karena yang buat ini juga manusia, bisa aja salah, mungkin salah typo/bug lain. Kalo saran fitur jg sangat
-                  boleh. Atau mungkin mau komplen soal styling jg ga masalah. Misal warnanya dark bgt nih, merah semua nih,
-                  atau ga keliatan fontnya atau kekecilan fontnya atau ada saran font jg sangat diperbolehkan.
+                  Karena yang buat ini juga manusia, bisa aja salah, mungkin
+                  salah typo/bug lain. Kalo saran fitur jg sangat boleh. Atau
+                  mungkin mau komplen soal styling jg ga masalah. Misal warnanya
+                  dark bgt nih, merah semua nih, atau ga keliatan fontnya atau
+                  kekecilan fontnya atau ada saran font jg sangat diperbolehkan.
                 </p>
               </div>
               <div className='space-y-4'>
