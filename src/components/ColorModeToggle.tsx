@@ -28,7 +28,7 @@ const ColorModeToggle = ({
     <div className={clsxm('h-8 w-8', className)}>
       <button
         className={clsxm(
-          'flex h-full w-full items-center justify-center rounded-full transition-colors hover:bg-gray-500',
+          'flex h-full w-full items-center justify-center rounded-full transition-colors hover:bg-gray-400 dark:hover:bg-gray-500',
           buttonClassName
         )}
         type='button'
