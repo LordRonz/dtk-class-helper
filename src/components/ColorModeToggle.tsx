@@ -7,8 +7,8 @@ type Props = {
   buttonClassName?: string;
   className?: string;
   iconClassName?: string;
-  value: 'dark' | 'light';
-  onChange: (v: 'dark' | 'light') => void;
+  value?: string;
+  onChange: (v: string) => void;
 };
 
 const ColorModeToggle = ({ buttonClassName, className, iconClassName, value, onChange }: Props): JSX.Element => {
