@@ -200,10 +200,10 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@giscus/react@^2.0.3":
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/@giscus/react/-/react-2.0.3.tgz#d80fb9a5a0c9d5a6364ba6711277ae64d9e4cbe2"
-  integrity sha512-ynywOgvvlPn7zmWXDWAPr3jqfYC43vwK1g5P8qr528GjyWKXVyxBLJIve/mBrl+aCpZurcaExtsoJ2z6gq+Xgg==
+"@giscus/react@^2.0.4":
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/@giscus/react/-/react-2.0.4.tgz#9b2ae8cdd81ac7701bcc8bd48fad2a9ecb8956b2"
+  integrity sha512-gaASYFDV2ferpikuT3YqXB13MYD14eGOjY/dmxixqGtIfMAkJbmNr+qQ51E8kefCFcbExjhH0WI54/MmbY1dQQ==
   dependencies:
     giscus "^1.0.3"
 
