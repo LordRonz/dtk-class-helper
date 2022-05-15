@@ -21,7 +21,7 @@
     "release": "standard-version -s"
   },
   "dependencies": {
-    "@giscus/react": "^2.0.3",
+    "@giscus/react": "^2.0.4",
     "@headlessui/react": "^1.6.1",
     "@tippyjs/react": "^4.2.6",
     "@types/react-copy-to-clipboard": "^5.0.2",
