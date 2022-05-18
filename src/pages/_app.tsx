@@ -8,6 +8,8 @@ import nProgress from 'nprogress';
 import { useEffect } from 'react';
 import { hotjar } from 'react-hotjar';
 
+import ScrollButton from '@/components/ScrollButton';
+
 declare module 'next-themes' {
   interface ThemeProviderProps {
     children: React.ReactNode;
@@ -36,6 +38,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <ThemeProvider attribute='class' defaultTheme='dark' enableSystem={false}>
       <Component {...pageProps} />
+      <ScrollButton />
     </ThemeProvider>
   );
 };
