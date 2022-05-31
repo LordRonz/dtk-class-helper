@@ -35,7 +35,7 @@
     "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "18.1.0",
     "react-hotjar": "^5.0.0",
-    "react-icons": "^4.3.1",
+    "react-icons": "^4.4.0",
     "react-select": "^5.3.2",
     "safe-regex": "^2.1.1",
     "tailwind-merge": "^1.2.1",
