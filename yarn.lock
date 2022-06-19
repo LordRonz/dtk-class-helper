@@ -1071,12 +1071,7 @@ color-name@^1.1.4, color-name@~1.1.4:
   resolved "https://registry.yarnpkg.com/color-name/-/color-name-1.1.4.tgz#c2a09a87acbde69543de6f63fa3995c826c536a2"
   integrity sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==
 
-colorette@^2.0.16:
-  version "2.0.16"
-  resolved "https://registry.yarnpkg.com/colorette/-/colorette-2.0.16.tgz#713b9af84fdb000139f04546bd4a93f62a5085da"
-  integrity sha512-hUewv7oMjCp+wkBv5Rm0v87eJhq4woh5rSR+42YSQJKecCqgIqNkZ6lAlQms/BwHPJA5NKMRlpxPRv0n8HQW6g==
-
-colorette@^2.0.17:
+colorette@^2.0.16, colorette@^2.0.17:
   version "2.0.17"
   resolved "https://registry.yarnpkg.com/colorette/-/colorette-2.0.17.tgz#5dd4c0d15e2984b7433cb4a9f2ead45063b80c47"
   integrity sha512-hJo+3Bkn0NCHybn9Tu35fIeoOKGOk5OCC32y4Hz2It+qlCO2Q3DeQ1hRn/tDDMQKRYUEzqsl7jbF6dYKjlE60g==
@@ -2781,10 +2776,10 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.2.4.tgz#eca284f75d2965079309dc0ad9255abb2ebc1632"
   integrity sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==
 
-lint-staged@^13.0.1:
-  version "13.0.1"
-  resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-13.0.1.tgz#899e78065ab29b88fdd922482411121664ef66be"
-  integrity sha512-Ykaf4QTi0a02BF7cnq7JIPGOJxH4TkNMWhSlJdH9wOekd0X+gog47Jfh/0L31DqZe5AiydLGC7LkPqpaNm+Kvg==
+lint-staged@^13.0.2:
+  version "13.0.2"
+  resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-13.0.2.tgz#35a1c57130e9ad5b1dea784972a40777ba433dd5"
+  integrity sha512-qQLfLTh9z34eMzfEHENC+QBskZfxjomrf+snF3xJ4BzilORbD989NLqQ00ughsF/A+PT41e87+WsMFabf9++pQ==
   dependencies:
     cli-truncate "^3.1.0"
     colorette "^2.0.17"
@@ -3517,10 +3512,10 @@ postcss@^8.4.14:
     picocolors "^1.0.0"
     source-map-js "^1.0.2"
 
-preact@^10.7.3:
-  version "10.7.3"
-  resolved "https://registry.yarnpkg.com/preact/-/preact-10.7.3.tgz#f98c09a29cb8dbb22e5fc824a1edcc377fc42b5a"
-  integrity sha512-giqJXP8VbtA1tyGa3f1n9wiN7PrHtONrDyE3T+ifjr/tTkg+2N4d/6sjC9WyJKv8wM7rOYDveqy5ZoFmYlwo4w==
+preact@^10.8.1:
+  version "10.8.1"
+  resolved "https://registry.yarnpkg.com/preact/-/preact-10.8.1.tgz#54227a20a688efe41e07c52d420e7f829c33c8c5"
+  integrity sha512-p5CKQ0MCEXTGKGOHiFaNE2V2nDq2hvDHykXvIlz+4lbfJ9umLZr8JS/fa1bXUwRcHXK+Ljk8zqmDhr25n0LtVg==
 
 prelude-ls@^1.2.1:
   version "1.2.1"
