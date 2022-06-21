@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@giscus/react": "^2.0.5",
-    "@headlessui/react": "^1.6.4",
+    "@headlessui/react": "^1.6.5",
     "@tippyjs/react": "^4.2.6",
     "@types/react-copy-to-clipboard": "^5.0.2",
     "clsx": "^1.1.1",
