@@ -11,7 +11,7 @@ const handler = (req: NextApiRequest, res: NextApiResponse<DataMatkul>) => {
   } = req;
 
   const matkul = dataMatkul.find(
-    (mk) => mk.kode.toLowerCase() == kode.toString().toLowerCase()
+    (mk) => mk.kode.toLowerCase() === kode?.toString().toLowerCase()
   );
 
   switch (method) {
