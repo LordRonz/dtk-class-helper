@@ -200,12 +200,12 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@giscus/react@^2.0.6":
-  version "2.0.6"
-  resolved "https://registry.yarnpkg.com/@giscus/react/-/react-2.0.6.tgz#66ace3761dddffe8da79c65c4c6af0b366f16aa3"
-  integrity sha512-Kdrz/Jx7XNwFMuaIXHWXeqISdYwilFhRp9blmUwkixR+HdFJe4+dzkorVNnyW0M/xbSfzhjb49Ng2YvJOB/28Q==
+"@giscus/react@^2.1.1":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@giscus/react/-/react-2.1.1.tgz#8f0e07d1db5b7b1b9106c1c5c8b6f0a334d8b138"
+  integrity sha512-YTZBbOILVKkWg0kUy+SRlkM6InSRWG7mefVEDcHQmC2saD1Voci16hT7cUqZPie3O1IG9M4yXIU4LxKWvxxE5g==
   dependencies:
-    giscus "^1.0.6"
+    giscus "^1.1.1"
 
 "@headlessui/react@^1.6.6":
   version "1.6.6"
@@ -380,10 +380,10 @@
   resolved "https://registry.yarnpkg.com/@types/minimist/-/minimist-1.2.2.tgz#ee771e2ba4b3dc5b372935d549fd9617bf345b8c"
   integrity sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==
 
-"@types/node@*", "@types/node@17.0.41":
-  version "17.0.41"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.41.tgz#1607b2fd3da014ae5d4d1b31bc792a39348dfb9b"
-  integrity sha512-xA6drNNeqb5YyV5fO3OAEsnXLfO7uF0whiOfPTz5AeDo8KeZFmODKnvwPymMNO8qE/an8pVY/O50tig2SQCrGw==
+"@types/node@*", "@types/node@18.6.0":
+  version "18.6.0"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.6.0.tgz#3ad8c5a4e8e11abc51a11894355f2ba58de9f1a1"
+  integrity sha512-WZ/6I1GL0DNAo4bb01lGGKTHH8BHJyECepf11kWONg3OJoHq2WYOm16Es1V54Er7NTUXsbDCpKRKdmBc4X2xhA==
 
 "@types/node@^14.14.31":
   version "14.18.5"
@@ -2151,12 +2151,12 @@ getpass@^0.1.1:
   dependencies:
     assert-plus "^1.0.0"
 
-giscus@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/giscus/-/giscus-1.0.6.tgz#e1baaf01a2601b46c1cc03a1751229707713b208"
-  integrity sha512-YPqo3ZyefMdAJaadZdDjSqj6m+KTZC21SL1QxF85HZZkBEqICzrGHu8PQhWc1HPiZAQsDVH9guvjhI79w+XUeg==
+giscus@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/giscus/-/giscus-1.1.1.tgz#32e4d6a8d76b0a0eb312b8c9b1fe476115483a65"
+  integrity sha512-WE0cjvf/OZ58EpYzdX8c1minxroSIXRSUy6APNQeaSwQBHwL6DjLH0Cn9n/D/LPlE8d3jxzy3sBFE6A00q586g==
   dependencies:
-    lit "^2.2.6"
+    lit "^2.2.8"
 
 git-raw-commits@^2.0.8:
   version "2.0.11"
@@ -2801,10 +2801,10 @@ lit-html@^2.2.0:
   dependencies:
     "@types/trusted-types" "^2.0.2"
 
-lit@^2.2.6:
-  version "2.2.6"
-  resolved "https://registry.yarnpkg.com/lit/-/lit-2.2.6.tgz#4ef223e88517c000b0c01baf2e3535e61a75a5b5"
-  integrity sha512-K2vkeGABfSJSfkhqHy86ujchJs3NR9nW1bEEiV+bXDkbiQ60Tv5GUausYN2mXigZn8lC1qXuc46ArQRKYmumZw==
+lit@^2.2.8:
+  version "2.2.8"
+  resolved "https://registry.yarnpkg.com/lit/-/lit-2.2.8.tgz#26bdf560042aa3ec9b788f5d48119f7138b2dcc1"
+  integrity sha512-QjeNbi/H9LVIHR+u0OqsL+hs62a16m02JlJHYN48HcBuXyiPYR8JvzsTp5dYYS81l+b9Emp3UaGo82EheV0pog==
   dependencies:
     "@lit/reactive-element" "^1.3.0"
     lit-element "^3.2.0"
